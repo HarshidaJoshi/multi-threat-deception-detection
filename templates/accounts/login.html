@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="page-header"><h1 class="page-title">Sign In</h1></div>
+<div class="glass card" style="max-width:28rem;">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-primary mt-3">Login</button>
+  </form>
+  <p class="text-sm muted mt-3">Admin users can also use <a href="/admin/">Django admin</a>.</p>
+</div>
+{% endblock %}

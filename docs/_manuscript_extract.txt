@@ -1,0 +1,393 @@
+Explainable artificial intelligence for multi-threat digital deception detection: a systematic review of deepfake, fake news, and recruitment scam detection
+[AUTHOR: author names, affiliations, and corresponding author e-mail. For double-blind review, move these to a separate title page.]
+Highlights
+62 studies on deepfake, fake-news and job-scam detection coded on four layers
+31 studies produce explanations, but only 3 produce durable, reviewable evidence
+Only 4 of 62 studies test whether their explanations are faithful
+Recruitment-fraud detection is the shallowest channel despite direct user harm
+We specify a minimum evidence-grade record for deception detectors
+Abstract
+Deepfakes, fake news, and recruitment scams are usually studied as three separate detection problems. In practice, all three end in the same act: a moderator, an investigator, or a job applicant must decide whether to accept or contest a machine verdict. Explainable artificial intelligence (XAI) is widely offered as the basis for that decision, yet no study has asked whether its outputs can serve as evidence. We address this question through a systematic review reported under PRISMA 2020. Six sources were searched in June 2026 using fully reported Boolean strings covering January 2020 to June 2026. Of 420 records, 62 studies were included after dual independent screening (Cohen's κ = 0.81 to 0.86) and a seven-item quality appraisal. Because datasets, splits, and metrics differ across studies, we make no performance comparison. Instead, each study is coded against a four-layer taxonomy of signal, model, explanation, and evidence, and audited against five comparability conditions. The central finding is an explanation-to-evidence gap. Thirty-one studies stop at per-decision explanation, four test whether their explanations are faithful, and only three produce a persistent artefact, such as a provenance check or a calibrated confidence record, that could withstand later review. Generalisation is equally unproven: 11 studies report cross-dataset evaluation and 6 report any measure of uncertainty. Recruitment fraud is the shallowest channel, with 5 of its 7 technical studies offering no per-decision explanation. From these results we derive ten research gaps and specify the minimum contents of an evidence-grade detection record.
+Keywords: deepfake detection; fake news detection; recruitment fraud; explainable artificial intelligence; digital evidence; systematic review
+1. Introduction
+Generative models have made digital deception cheap to produce and hard to catch. Synthetic faces, fabricated news reports, and fraudulent job advertisements are now convincing enough that ordinary users, and often trained moderators, cannot reliably separate them from authentic content. The costs are concrete. Trust in platforms erodes, false claims spread faster than their corrections, and people who answer a fake job offer lose money and personal data.
+Research on these threats has grown up in separate communities. Deepfake detection has drawn the largest effort, moving from handcrafted frequency features and shallow convolutional networks to EfficientNet variants, vision transformers, and CLIP-style representations [1–5]. Fake-news detection followed a parallel route, from term-frequency classifiers to BERT, RoBERTa, and large language models [6–9]. Recruitment-fraud detection is still small, with a handful of studies built largely on a single public benchmark [10–12].
+This separation has historical reasons, but it is hard to defend in operational terms. A moderator triaging a suspect post, an analyst reconstructing a fraud chain, and a platform reviewing a reported job advertisement all ask the same two questions. Is this artefact authentic? And if the system says it is not, on what grounds? Most detectors answer only the first. They return a probability while the reasoning stays hidden, and that opacity limits their use in digital forensics, journalism, regulated recruitment, and law enforcement [13, 14].
+XAI is the obvious candidate for the missing second answer. Gradient-weighted class activation mapping (Grad-CAM), local interpretable model-agnostic explanations (LIME), Shapley additive explanations (SHAP), and attention-based attribution already appear in each of the three literatures [15–17]. Yet an explanation shown on a screen is not the same thing as evidence. Evidence must persist after the decision, identify the model and input that produced it, carry a trustworthy confidence, and survive challenge by someone who did not build the system. Whether XAI outputs in this field meet any of these conditions has not been examined. That is the question this review addresses.
+1.1. Contributions
+The paper makes five contributions. Each can be checked against the material we supply.
+A reproducible PRISMA 2020 review of 62 studies published between January 2020 and June 2026. Search strings, per-source counts, search dates, eligibility criteria, a seven-item appraisal rubric with inter-rater agreement, and a 21-field extraction form are all provided as supplementary material, so every conclusion can be traced to its source study.
+A reporting-practice audit in place of the informal accuracy comparisons common in this literature. Rather than placing incompatible accuracy figures side by side, we count how many studies meet five defined comparability conditions and grade every study accordingly.
+A four-layer taxonomy of signal, model, explanation, and evidence, with an operational coding scheme applied to all 62 studies. The resulting coverage matrix is validated through three case walkthroughs, one per threat channel.
+A minimum specification for an evidence-grade detection record, derived from the empty regions of the coverage matrix. It states what a detector must emit for its output to be reviewable by a third party, and reports how often the current literature meets each requirement that our extraction captured.
+Ten research gaps and seven prioritised directions, each tied to a taxonomy layer and to the studies that leave it unaddressed.
+1.2. Position against prior surveys
+Strong surveys exist within each domain, and we claim no priority over them. Our claim is narrower and testable. No existing survey covers all three deception channels, applies one coded framework across its whole corpus, or asks whether detector outputs can serve as evidence. Table 1 compares this review with the seven most closely related surveys.
+Table 1. Position of this review against the closest prior surveys. DF = deepfake; FN = fake news; RS = recruitment scam. A coded framework means an explicit coding scheme was applied to every included study and the results reported.
+Survey
+Scope
+DF
+FN
+RS
+Explainability
+Coded framework
+Evidence or provenance assessed
+Mirsky and Lee [18]
+Deepfake creation and detection
+Yes
+No
+No
+Incidental
+No
+No
+Alghamdi et al. [6]
+Machine learning for fake news
+No
+Yes
+No
+Incidental
+No
+No
+Lv et al. [44]
+Multimodal fake news detection
+No
+Yes
+No
+Incidental
+No
+No
+Momin et al. [13]
+Explainable deepfake detection
+Yes
+No
+No
+Central
+Partial
+No
+Nguyen-Le et al. [22]
+Deepfake detection with empirical evaluation
+Yes
+Limited
+No
+Mixed
+Partial
+No
+Papasavva et al. [12]
+AI for online fraud
+No
+Partial
+Partial
+Discussed
+No
+No
+Moyo et al. [19]
+Fake news and deepfake framework
+Yes
+Yes
+No
+Discussed
+Conceptual only
+No
+This review
+Three-channel deception under XAI
+Yes
+Yes
+Yes
+Central
+Yes, all 62 studies
+Yes, layer L4 and audit
+Moyo et al. [19] come closest to our scope. They bring fake-news and deepfake detection into one conceptual framework, but they do not cover recruitment fraud, apply no coding scheme to their corpus, and do not ask whether detector outputs could serve as evidence. Momin et al. [13] place explainability at the centre but remain within a single channel. Deepfake and fake-news detection are already well surveyed, so another single-domain review would add little. What is missing is the combination this paper supplies: a recruitment-fraud channel, a coded cross-domain framework, and an explicit test of evidential value.
+1.3. Research questions
+RQ1. How have deepfake detection architectures and their explanation mechanisms developed between 2020 and 2026, and what share of that work produces evidence usable outside the model?
+RQ2. How has fake-news detection developed under transformer and large-language-model architectures, and how is explanation handled there?
+RQ3. What methods exist for recruitment-fraud detection, and how does that literature compare with the other channels under the same coding scheme?
+RQ4. Which explanation techniques are used across the channels, what are their limitations, and how consistently is explanation quality evaluated?
+RQ5. Which taxonomy layers are least populated, what must a detector emit to reach the evidence layer, and which research directions follow?
+2. Review methodology
+2.1. Protocol and reporting standard
+The review is reported in accordance with the PRISMA 2020 statement. Before screening began, we wrote a protocol fixing the research questions, search strings, eligibility criteria, appraisal rubric, and extraction fields. It was time-stamped and not amended afterwards. The protocol and the completed PRISMA 2020 checklist form Supplementary File S1. The review was not registered in PROSPERO, which accepts only reviews with a health outcome. No meta-analysis was planned or performed, for the reasons given in Section 2.7.
+2.2. Information sources and search strategy
+Six sources were searched between 12 and 16 June 2026: Scopus, IEEE Xplore, ACM Digital Library, SpringerLink, ScienceDirect, and Google Scholar. Google Scholar served only as a supplementary check. We screened the first 100 ranked results per query and kept a record only if it had a digital object identifier (DOI) and a peer-reviewed venue. Coverage ran from January 2020 to June 2026.
+The searches returned 396 records: Scopus 184 (two queries), IEEE Xplore 61, ACM Digital Library 34, SpringerLink 58, ScienceDirect 42, and Google Scholar 17. Queries were adapted in syntax only, never in concept, where a database lacked an operator. The verbatim Boolean strings, fields searched, and execution dates for every source appear in Supplementary File S1. Backward snowballing on the nine surveys in the corpus and forward snowballing on the six most-cited included studies added 24 records, for a total of 420.
+2.3. Eligibility criteria
+A record was included if it met four conditions. It had to be a peer-reviewed journal article, conference paper, or systematic review with a DOI. It had to make a technical, algorithmic, or synthesis contribution to deepfake, fake-news, or online recruitment-fraud detection. It had to use an explanation technique or treat interpretability explicitly. And it had to be published in English between January 2020 and June 2026.
+We excluded duplicates, non-English records, editorials, magazine pieces, and non-peer-reviewed preprints. We also excluded generation studies with no detection component and studies reporting no method, dataset, or evaluation. The protocol recorded one planned exception. Three criminological studies [23–25] were retained because the recruitment channel has too little technical literature to describe its threat surface without them. They are coded separately and excluded from every technical count reported below.
+2.4. Selection process and inter-rater agreement
+Two reviewers screened all records independently, each blind to the other's decisions. Removing 110 exact or fuzzy duplicates left 310 records for title and abstract screening. The reviewers agreed on 283 of these (Cohen's κ = 0.81), and a third reviewer resolved the 27 disagreements. Screening excluded 170 records as unrelated to the three channels or to explainability, leaving 140 for full-text assessment.
+Full-text assessment excluded 48 records. Of these, 21 had no explainability component, 14 addressed generation rather than detection, 8 were not peer reviewed, and 5 could not be obtained after two requests to the corresponding author. Agreement at this stage was κ = 0.86. Quality appraisal then removed 30 of the remaining 92 records. Twelve had been superseded by a later and more complete publication from the same authors on the same system, 10 fell below the appraisal threshold, and 8 proved on close reading to fall outside the domain or explainability scope. The final corpus contains 62 studies: 25 on deepfakes, 26 on fake news, 7 on recruitment fraud, and 4 cross-cutting surveys. Figure 1 shows the flow, and Supplementary File S3 lists every included study.
+Figure 1. PRISMA 2020 study selection flow diagram. Exclusion reasons are abbreviated; full wording is given in Section 2.4. Inter-rater agreement was κ = 0.81 at title and abstract screening, κ = 0.86 at full-text assessment, and κ = 0.79 at quality appraisal.
+2.5. Quality appraisal
+No standard appraisal instrument exists for computational detection studies. We therefore built a seven-item rubric from the methodological-quality dimensions of AMSTAR-2 and the CLAIM reporting guideline. The items are dataset specification (Q1), split protocol (Q2), metric reporting (Q3), baseline comparison (Q4), generalisation evidence (Q5), explanation integration (Q6), and reproducibility (Q7). Each item scores 0 (absent), 1 (partial), or 2 (fully reported), for a maximum of 14. Studies scoring below 7, or scoring 0 on Q1 or Q3, were excluded.
+Both reviewers appraised all 92 eligible records independently. Agreement on the include or exclude decision was κ = 0.79, and the mean absolute difference in total score was 1.2 points. Mean item scores across the 62 included studies were 1.7, 1.4, 1.5, 1.2, 0.5, 1.1, and 0.8 for Q1 to Q7. The two weakest items, generalisation evidence and reproducibility, reappear as gaps in Section 10.3. Item wording and per-study scores are given in Supplementary File S2.
+2.6. Data extraction
+We used a structured form with 21 fields. Both reviewers piloted it on ten eligible studies. After the pilot, two fields were merged and one was added to record the level at which an explanation is produced. The fields cover bibliographic and venue data, threat channel, task formulation, input modality, backbone architecture and parameter scale, training and evaluation datasets, class balance, split protocol, metrics and values, cross-dataset evaluation, uncertainty reporting, explanation technique, granularity and evaluation, artefact availability, taxonomy layer reached, and appraisal score. The first reviewer extracted all data and the second verified every entry. The 19 discrepancies were resolved by returning to the source article. The complete extraction table is Supplementary File S3.
+2.7. Synthesis strategy and the non-comparability protocol
+The included studies differ in dataset, compression level, split protocol, class balance, positive-class definition, and metric. Placing their reported accuracies side by side would therefore mislead, and pooling them would be indefensible. We adopted an explicit non-comparability protocol and applied it without exception. We report no pooled statistic, no ranking by reported accuracy, and no claim that one architecture outperforms another on the basis of figures from different studies.
+Every figure we cite is attributed to its source, labelled with the dataset and split on which it was obtained, and presented as what the authors reported rather than as a measure of quality. Each study in the evidence map carries a comparability grade built from five binary conditions, and cross-study statements rely on these grades, not on accuracy. Trends are described as changes in methodological practice, which can be compared, rather than in performance, which cannot. The synthesis is narrative and structural and follows the Synthesis Without Meta-analysis (SWiM) reporting items. Studies are grouped by threat channel and taxonomy layer, and every directional statement rests on counts of coded attributes.
+3. The multi-threat taxonomy and its coding scheme
+3.1. Construction
+The taxonomy was derived from the extraction data rather than imposed in advance. During pilot extraction it became clear that studies in all three channels follow the same four-stage pipeline and differ mainly in how far along it they travel.
+The signal layer (L1) covers the artefact and the features extracted from it. These include pixel and frequency residuals for images and video, spectro-temporal features for audio, lexical, syntactic, and propagation features for text, and structured metadata such as account age, salary field, or contact channel for job advertisements. The model layer (L2) is the decision function that maps signal to label. The explanation layer (L3) produces a human-readable account of an individual decision. The evidence layer (L4) turns that explanation into a durable, transferable artefact that supports later review. Examples are an evidence package, a provenance or watermark check, a chain-of-custody record, or a calibrated confidence statement.
+The layers are cumulative. A study is assigned to the highest layer for which it presents a component that is both implemented and evaluated. This rule turns a loose observation about explainability into a variable that can be coded and counted, which is what makes the taxonomy an analytical instrument rather than an illustration.
+Figure 2. The four-layer multi-threat taxonomy, with the number of studies whose highest layer is each level.
+3.2. Coding scheme
+Each layer has an explicit decision rule, applied to the full text of every study.
+L1: the study characterises features or artefacts without training and evaluating a detector.
+L2: a detector is trained and evaluated, but no per-decision explanation is produced. Global feature-importance rankings alone count as L2.
+L3: the study produces an explanation for individual decisions using a named technique and shows at least one example, whether or not the explanation is evaluated.
+L4: the study produces and evaluates a persistent artefact intended for downstream review.
+Both reviewers coded all 62 studies independently, with κ = 0.84. Disagreement clustered at the boundary between L3 and L4. The four disputed cases were resolved by requiring explicit evidence of an artefact that persists beyond the classification event.
+3.3. Coverage matrix
+Table 2 reports the result of applying the coding scheme to all 62 studies. It is the principal empirical finding of the review, and it describes the structure of the literature rather than the accuracy of any system.
+Table 2. Coverage matrix: highest taxonomy layer reached by each of the 62 included studies, with the number that also evaluate the quality of their own explanations.
+Threat channel
+n
+L1
+L2
+L3
+L4
+Explanation evaluated
+Deepfake and visual forgery
+25
+1
+9
+13
+2
+3
+Fake news and misinformation
+26
+0
+12
+13
+1
+1
+Recruitment scam (technical)
+7
+0
+5
+2
+0
+0
+Cross-cutting surveys
+4
+0
+1
+3
+0
+0
+Total
+62
+1
+27
+31
+3
+4
+Three findings follow. First, the literature stops overwhelmingly at the explanation layer. Thirty-one studies stop at explanation, and only three go on to turn their explanations into a durable evidence artefact. Second, explanation quality is almost never tested. Only 4 of 62 studies evaluate their explanations against any criterion, so in 27 of the 31 L3 studies the explanation is displayed and simply assumed to be correct. Third, the recruitment channel is not only smaller but structurally shallower. Five of its seven technical studies stop at L2, and none reaches L4.
+3.4. Validation through case walkthroughs
+To test whether the four layers describe a real operational workflow, we applied them to three published incident types, one per channel. Each walkthrough uses only capabilities documented in the corpus.
+Deepfake: a circulated political face-swap video. The signal is a re-encoded, downscaled social-media video, so the compression-sensitive frequency residuals that many detectors rely on are partly destroyed [3, 29]. A convolutional or transformer detector [3, 37] returns a per-frame probability, and gradient saliency localises the decision to the blending boundary [3, 16, 27]. Operationally, however, a reviewer must be able to show weeks later which model version and which frames supported the conclusion. Only one reviewed system couples detection with provenance [61], and none emits a versioned, hashable evidence bundle. The walkthrough therefore stops at L3.
+Fake news: a health-misinformation claim. The signal is the claim text, the posting account, and the propagation cascade. The model is a BERT-family or graph-augmented classifier [9, 17], and Shapley attribution identifies the clause that drives the decision [17]. What a fact-checker actually needs is a link to an external, verifiable source, because a token-importance map cannot say whether the claim is false. Only multi-granularity attribution reasoning [60] moves from a weight towards a reason. This walkthrough also stops at L3, and it exposes a channel-specific requirement: for text, useful evidence is external corroboration, not internal attribution.
+Recruitment fraud: a fraudulent job advertisement. The signal is the advertisement text plus metadata such as company registration status, salary range, contact channel, and any request for an advance payment. The model is Fraud-BERT [11] or the classifier of Naude et al. [10]. Neither produces per-decision explanations. The warned applicant receives no reason, and the platform removing the listing holds no defensible record. This walkthrough stops at L2.
+The third case is the clearest structural finding of the review. The channel with the most immediate consequences for individual users, and the strongest obligation to justify a removal decision, has the least explanation capability.
+4. Deepfake and visual forgery detection
+Twenty-five studies address visual or audiovisual forgery. Early deepfakes were produced with generative adversarial networks, whereas recent work is dominated by diffusion and hybrid pipelines [1, 18, 26]. Detection has followed the same path. Convolutional backbones remain common for still images, where hybrids of spatial and frequency features exploit compression artefacts that raw-pixel models miss [3, 4]. Ensemble and multi-stream designs [28–32] and hybrid bag-of-visual-words fusion [33] are motivated by a shared observation: a single feature stream tends to overfit one forgery family.
+Transformer and cross-modal designs respond to the limited receptive field of convolutional models. Shifted-window systems [36], convolutional vision transformers [37], and EfficientNet–Swin hybrids [5, 38] are reported to perform strongly on FaceForensics++ and Celeb-DF. Cross-modal detectors that combine captions with frequency cues are reported to improve transfer across generators [39], and deep hashing enables proactive retrieval of forged variants [40]. For audio, an interpretable spectro-temporal diffusion transformer combines augmentation with attention and with Shapley or class-activation explanations [41].
+Gradient saliency dominates explanation in this channel. It typically localises blending artefacts around the eyes, mouth, and jawline [3, 13, 16, 43], and one platform attaches heatmaps and short textual notes to each face-swap decision [16]. Only three studies evaluate the explanation itself. One proposes quantitative measures of explanation quality [15], one argues that explanations must be validated rather than trusted [13], and one calibrates uncertainty to counter overconfident predictions [42]. That is a small share of a channel in which explanation is routinely presented as a contribution.
+Six limitations recur across the channel and are recorded in the extraction table: forensic traces destroyed by re-encoding [3, 29]; generator turnover that invalidates detectors trained on older synthesis methods [1, 26]; weak transfer across datasets [2, 5, 22]; degradation on low-resolution and occluded faces; vulnerability to adversarial attack [34]; and confident predictions without calibrated uncertainty [42]. Only 6 of the 25 studies report cross-dataset or cross-generator evaluation, so most robustness claims in this channel remain untested rather than established (RQ1).
+5. Fake news and misinformation detection
+Twenty-six studies address misinformation. Surveys usually divide this work into content-based, propagation-based, source-based, and multimodal families [6–8, 44]. Classical term-frequency, support vector machine, and stacking pipelines survive as baselines [7, 46, 47], alongside deep ensembles [56]. Most current work builds on BERT and its relatives, including hybrid recurrent and transformer models [48], graph-augmented ensembles [9, 49], reinforced transformers [50], and transfer learning with large language models [51]. A dual-stream model combining BERT with a graph neural network is reported to perform strongly on context-rich data [9]. However, it depends on social-graph annotation that is unavailable in most deployment settings.
+Data scarcity is the binding constraint in this channel. Augmentation with large language models is reported to improve few-shot multilingual performance but risks introducing synthetic bias [52]. A framework based on veracity–dissemination consistency combines adversarial and contrastive self-supervision for the few-shot case [53]. Contrastive multimodal alignment relates CLIP features to heterogeneous news networks [45]. Adaptive gated fusion and attention-based recurrent models target low-resource Hindi and Amharic detection [54, 58], and multimodal large-model frameworks extend classification to cross-platform spread chains [55].
+Local surrogate and Shapley attribution are the standard explanation tools here [17, 59]. Two findings deserve emphasis. A design-science study shows that explanations do not automatically increase user trust and can even reduce confidence [14]. This undermines the assumption on which much of the channel proceeds. Meanwhile, multi-granularity attribution reasoning moves from attribution weights towards reasoning about manipulation intent [60], which is closer to what a fact-checker needs. Taken together, these results point to a problem of explanation design, not merely of explanation availability (RQ2).
+6. Recruitment scam and online job fraud detection
+Seven technical studies address recruitment fraud, compared with 25 and 26 in the other two channels. Naude et al. [10] classify fraudulent job types using rule-based, bag-of-words, embedding, and transformer features with gradient boosting. Taneja et al. [11] introduce a context-aware transformer, Fraud-BERT, evaluated on the Employment Scam Aegean Dataset (EMSCAD), in which fraudulent postings form a small minority class. The remaining technical studies [AUTHOR: cite the other five recruitment studies from S3 here] use similar feature sets and the same benchmark. A broader review finds that language-based fraud analysis is spread unevenly across scam types [12].
+Two structural weaknesses limit this channel. The first is benchmark monoculture. One heavily imbalanced public dataset is effectively the only benchmark, and it predates machine-generated advertisement text. Strong performance on it therefore says little about performance on contemporary fraud. The second weakness is the absence of explanation. This matters more here than anywhere else, because both platform removal decisions and warnings to applicants require a justification that current systems cannot produce.
+The criminological literature describes scam patterns that no current benchmark represents. These include fake recruiter profiles and inflated salary offers on professional networks, and code-switched approaches over messaging applications that lure applicants into fees or false identity checks [12]. They also include fraudulent government-recruitment portals that collect application payments [23], and advance-fee or data-harvesting listings on legitimate job portals [10, 11]. Work on victim motivation [23], coerced participation [24], and pathways into cyber-fraud [25] explains why these schemes succeed, but it proposes no detectors. Before architectural comparisons in this channel can mean anything, it needs a benchmark that is multilingual, multi-platform, and versioned over time (RQ3).
+7. Explanation techniques across the three channels
+Five families of explanation technique appear in the corpus (Table 3). Counts sum to more than the number of studies producing explanations, because several studies use more than one technique.
+Table 3. Explanation families in the corpus, their appropriate use, and their documented limitations.
+Family
+Studies using it
+Appropriate use
+Main limitation
+Gradient saliency (e.g. Grad-CAM)
+18
+Spatial localisation in image and video detectors
+Faithfulness rarely verified; maps can look plausible while being wrong [13, 15]
+Shapley attribution (SHAP)
+11
+Token or feature attribution where an additive, auditable account is needed
+Costly at transformer scale; additivity poorly suited to correlated features [17]
+Local surrogate (LIME)
+9
+Model-agnostic explanation of single text decisions
+Unstable across runs and perturbation settings [59]
+Attention weights
+8
+Token or region emphasis in transformers, at little extra cost
+Attention is not attribution and cannot substitute for it as evidence [13]
+Generated rationale
+5
+Human-readable, claim-level justification
+Fluent but possibly unfaithful to the decision; almost never validated [60]
+The distribution follows modality rather than principle. Gradient saliency is used for images, surrogate and Shapley attribution for text, and attention wherever it is available at no extra cost. What is missing is any shared requirement on what an explanation must satisfy. Until the field agrees on such criteria, explanations will work as presentation rather than evidence. Only 4 of 62 studies evaluate explanation quality, and no two of them use the same criterion (RQ4). This is precisely the distinction that the evidence layer is meant to enforce.
+8. Evidence map and reporting-practice audit
+Supplementary File S3 contains an evidence map of every included system. It replaces the accuracy ranking common in this literature. Each row records what the authors reported, on which data, and a comparability grade built from five binary conditions:
+C1: a named public dataset is used.
+C2: the split protocol is fully specified.
+C3: more than one metric is reported.
+C4: cross-dataset or cross-generator evaluation is reported.
+C5: code or trained weights are released.
+Grade A means four or five conditions are met, grade B two or three, and grade C zero or one. Rows with different grades are not comparable, and rows with the same grade are comparable only when they share a dataset.
+The audit behind these grades is itself a result (Figure 3). Across the 62 studies, 46 use at least one named public dataset, 38 fully specify their split, and 44 report more than one metric. By contrast, only 11 report cross-dataset or cross-generator evaluation, 17 release code or weights, and 6 report any measure of uncertainty. Only 9 studies reach grade A. The pattern is clear. The field reports the basic conditions of an experiment well, but rarely provides what would let a reader trust a result beyond its own test set.
+Figure 3. Reporting practice across the 62 included studies (C1 to C5 as defined in Section 8). The three conditions at the top (navy) are met by a majority of studies; the four at the bottom (red) are met by a minority and together define the evidential weakness of the corpus.
+The most informative entry in the map is not the highest accuracy. It is the single system that reports both validation and deployment performance [35]. There, accuracy falls from about 98.9% on validation data to about 93.2% on real-world data. Because both figures come from the same authors within one study, they can legitimately be compared. The gap is the strongest evidence available in the corpus that headline validation accuracy does not predict field performance.
+9. Minimum requirements for an evidence-grade detection record
+The coverage matrix shows where the literature stops. This section states what it would take to go further. We define an evidence-grade detection record as the minimum set of outputs a detector must emit so that a third party, who did not build the system, can later review, reproduce, and contest its decision. The requirements follow directly from the empty cells of Table 2, the audit in Section 8, and the three walkthroughs in Section 3.4.
+Table 4. Minimum contents of an evidence-grade detection record, and how often the reviewed corpus supplies each element (n = 62).
+Element
+Why a reviewer needs it
+Studies supplying it
+Model identifier and version
+Ties the decision to a specific, reproducible model state
+Not coded
+Input hash
+Proves which exact artefact was analysed, even after re-sharing or re-encoding
+Not coded
+Calibrated confidence
+A raw softmax output is not a probability a reviewer can rely on
+6
+Faithfulness-tested explanation
+An untested explanation is presentation, not evidence
+4
+Out-of-distribution result
+Shows the detector works beyond the data it was trained on
+11
+Released code or weights
+Allows independent re-execution of the decision
+17
+Persistent, reviewable artefact
+Keeps the record available after the classification event
+3
+Note. Model version and input hash were not fields in the extraction form, so their frequency could not be counted. Section 12 records this as a limitation.
+The record is deliberately modest. Every element is technically routine: hashing an input, logging a model version, calibrating scores with temperature scaling, and running a deletion or insertion test on an explanation are all standard procedures. None requires a new architecture. The obstacle is therefore not capability but convention. The field has not yet treated these outputs as part of what a detector is expected to deliver.
+The record also differs by channel. For images and video, the input hash and provenance check matter most, because re-encoding destroys forensic traces and the same artefact circulates in many versions. For fake news, the walkthrough in Section 3.4 shows that the most useful element is an external corroborating source, which should be recorded alongside the internal attribution. For recruitment fraud, where five of the seven technical studies stop at L2, the first step is simply to produce a per-decision reason that a warned applicant or a platform reviewer can read.
+10. Datasets, trends, and research gaps
+10.1. Datasets
+Deepfake work relies on FaceForensics++, Celeb-DF, the Deepfake Detection Challenge set, and a balanced still-image collection. Their shared limitations are identities skewed towards celebrities, inconsistently reported compression, and generator coverage that predates diffusion models. Fake-news work relies on LIAR, ISOT, FakeNewsNet, a COVID-19 claim set, and platform-specific corpora. These are mostly in English, tied to particular topics, and dependent on social context that is rarely available in deployment. Recruitment work relies on one severely imbalanced public benchmark. Audio work relies on ASVspoof and studio-quality recordings that do not resemble the compressed audio shared through messaging applications.
+10.2. Methodological trends
+We describe trends as changes in methodological practice, which can be compared across studies. Between 2020 and 2022 the corpus is dominated by convolutional detectors and classical text classifiers, and explanation appears in 3 of the 14 studies from that period. From 2023, transformer and contrastive multimodal architectures become standard, and explanation appears in 28 of the 48 studies published in 2023 or later. Cross-dataset evaluation, however, barely changes, moving from 4 of 14 studies to 7 of 48. Studies reaching the evidence layer appear only from 2025 [42, 61]. The overall picture is of a field that adopted explanation quickly but has hardly begun to test generalisation. Recruitment fraud remains sparse throughout.
+10.3. Research gaps
+Ten gaps follow from the coverage matrix and the reporting audit. Each is stated with its taxonomy layer and supporting evidence.
+G1. Cross-channel integration (evidence). No study applies one authenticity workflow across more than two channels. The walkthroughs show three separate pipelines where one is operationally required [2, 6, 19, 44].
+G2. Explanation as an afterthought (explanation). In 27 of the 31 L3 studies, the explanation is displayed but never evaluated. This pattern is typical of explanation attached to a finished classifier rather than designed into the decision [14, 43, 62].
+G3. Unverified generalisation (model). Only 11 of 62 studies report cross-dataset or cross-generator evaluation [5, 22, 29].
+G4. Language coverage (signal). Fake-news benchmarks are mostly in English, and work on Indic and other low-resource languages appears in only 3 studies [52, 54, 57].
+G5. Deployment and latency (model). One study reports real-world deployment performance [35]. Edge and streaming constraints remain untested.
+G6. Compute trade-offs (model). Heavy transformers dominate, but only 4 studies quantify the cost of lighter alternatives [4, 9, 36].
+G7. Explanations and trust (explanation). Explanations do not reliably increase trust and may reduce it [14]. Only 4 of 62 studies evaluate their explanations, and they share no criterion.
+G8. Multimodal fusion (signal and model). Fusion of text, image, and audio, and the tracing of cross-platform spread chains, remain immature [20, 45, 55].
+G9. Benchmark bias (signal). Class imbalance in recruitment data, celebrity skew in deepfake data, and inconsistent protocol reporting prevent fair comparison [11, 21, 26]. Only 38 of 62 studies fully specify their split.
+G10. Provenance handling (evidence). Three of 62 studies reach the evidence layer, and only one couples detection to provenance [61].
+10.4. Answers to the research questions
+Table 5 brings together the answers developed in Sections 4 to 10. Each answer is a count of coded attributes, not a claim about performance.
+Table 5. Summary of findings against the five research questions. Counts refer to included studies; layer codes follow Section 3.2.
+Question
+Answer from the coded corpus
+RQ1. Deepfake architectures, explanation, and evidence usable outside the model
+25 studies. Backbones move from convolutional to transformer and CLIP-style designs. 13 reach L3 and 2 reach L4, so 8% of the channel produces a transferable artefact. Only 6 of 25 report cross-dataset or cross-generator evaluation.
+RQ2. Fake-news detection under transformer and large-language-model architectures
+26 studies. BERT-family, graph-augmented, and large-language-model designs dominate, and data scarcity is the binding constraint. 13 reach L3, 1 reaches L4, and only 1 evaluates its explanations. Because explanations do not reliably raise user trust, the problem is explanation design, not availability.
+RQ3. Recruitment-fraud methods under the same coding scheme
+7 technical studies. 5 stop at L2 and none reaches L4, so the channel is structurally shallower, not merely smaller. One imbalanced benchmark, predating machine-generated advertisement text, is effectively the only evaluation surface.
+RQ4. Explanation techniques, limitations, and evaluation of explanation quality
+Five families are in use, chosen by modality rather than principle: gradient saliency, local surrogate, Shapley attribution, attention weights, and generated rationale. 4 of 62 studies evaluate explanation quality, and no two use the same criterion.
+RQ5. Least-populated layers, requirements for the evidence layer, and resulting directions
+The evidence layer holds 3 of 62 studies and explanation evaluation 4 of 62. Cross-dataset evaluation is reported by 11 and uncertainty by 6. Section 9 specifies seven elements of an evidence-grade record, and Section 11 sets out seven directions, led by bringing text-explanation pipelines into the recruitment channel.
+11. Research directions
+The following directions are ordered by the size of the gap they address rather than by novelty (RQ5).
+Bring explanation into the recruitment channel. The surrogate and Shapley text pipelines already demonstrated for misinformation [17, 59] apply directly to job-advertisement classification. Doing so would move five L2 systems to L3 without any architectural innovation, which makes it the lowest-cost improvement identified in this review.
+Define evaluation criteria for explanations. A shared benchmark for faithfulness, stability, and human usefulness [15] is a precondition for treating explanations as evidence.
+Adopt the evidence-grade record of Section 9. A standard package combining the decision, the explanation, the model identifier and version, an input hash, and a calibrated confidence would make the transition from L3 to L4 auditable [13, 16].
+Build a new recruitment-fraud benchmark. It should be multilingual, drawn from several platforms, versioned over time, and include machine-generated advertisement text [11, 12].
+Make cross-dataset evaluation a reporting norm. With only 11 of 62 studies reporting it, requiring a single out-of-distribution evaluation would change the evidential standing of this literature more than any new architecture.
+Develop calibrated multimodal fusion with explicit uncertainty quantification [20, 22, 42, 55].
+Couple provenance verification to detection rather than deploying the two separately [61], using federated training where centralising user media is not permissible [21].
+12. Threats to validity
+Six limitations qualify these findings. First, the corpus is restricted to English-language, peer-reviewed publications with a DOI. This under-represents other languages and industry reports, and probably understates deployment activity. Second, layer coding depends on what authors chose to report. A system that produces evidence artefacts without describing them would be coded conservatively at L3. Third, although two reviewers coded independently with substantial agreement, the boundary between L3 and L4 required a resolution rule and remains the least stable part of the scheme. Fourth, the review covers publications up to June 2026. Because search strings and dates are reported in full, the search can be re-run for any later window. Fifth, because no cross-study performance comparison is made, this review cannot say which detector is best. That absence is deliberate, since the extracted data do not support such a ranking. Finally, the evidence-grade record in Section 9 was specified after extraction was complete. Two of its elements, model versioning and input hashing, were therefore not coded, and a future update of this review should add them to the extraction form.
+13. Conclusion
+This review examined 62 studies on deepfake, fake-news, and recruitment-scam detection published between 2020 and 2026, using a single explainability framework. Applying a four-layer coding scheme produced a specific structural finding. The literature has adopted explanation widely but has not converted it into evidence. Thirty-one studies stop at per-decision explanation, four check whether those explanations are correct, three produce a durable artefact that could survive review, and eleven test their systems outside the training distribution.
+The three channels are unequal in a way that matters in practice. Deepfake and fake-news detection are mature in architecture and moderately developed in explanation. Recruitment-fraud detection is neither, even though it is the channel in which an individual suffers direct loss and a platform must justify its removal decisions. Transferring established text-explanation techniques to this channel, and building a benchmark that reflects contemporary fraud, are achievable near-term steps.
+Taken as a whole, the field appears to be optimising the wrong quantity. Reported accuracy is uniformly high and therefore largely uninformative. It is obtained under conditions that bear little resemblance to deployment, and the one study reporting both validation and field performance records a drop of more than five percentage points. The binding constraints are generalisation, explanation quality, and evidence handling. The taxonomy, coding scheme, and evidence-grade record proposed here are offered as instruments for measuring progress against those three constraints, rather than against an accuracy figure that no longer distinguishes one system from another.
+Data availability statement
+No new primary data were generated. All material analysed was taken from the published literature cited here. Three supplementary files contain everything needed to reproduce the review. S1 holds the protocol, the completed PRISMA 2020 checklist, and the verbatim database queries with execution dates. S2 holds the seven-item rubric and per-study appraisal scores for all 92 records assessed. S3 holds the complete 21-field extraction table for the 62 included studies, including the taxonomy layer assigned to each. Any conclusion in this paper can be traced through S3 to its supporting study.
+Funding
+This research received no funding from any public, commercial, or not-for-profit organisation.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have influenced the work reported in this paper.
+Declaration of generative AI use
+During the preparation of this work the authors used Claude (Anthropic) to improve the language, readability, and structure of the manuscript and to redraw the figures from the authors' data. After using this tool, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication. [AUTHOR: add any other tools you used.]
+Informed consent
+Not applicable. This study analyses only published literature. No human or animal subjects were involved and no personal data were collected.
+References
+[1] Abbas F, Taeihagh A. Unmasking deepfakes: a systematic review of deepfake detection and generation techniques using artificial intelligence. Expert Systems with Applications 2024; 252: 124260. doi: 10.1016/j.eswa.2024.124260
+[2] Soundarya BC, Gururaj HL. Deepfake detection: critical review of state-of-the-art approaches and future perspectives. Discover Applied Sciences 2026; 8 (2). doi: 10.1007/s42452-025-08174-9
+[3] Kumar M, Kumar A, Yadav V. A hybrid spatial-frequency attention-based algorithm using EfficientNet for robust and interpretable deepfake detection. Scientific Reports 2026; 16 (1). doi: 10.1038/s41598-026-46086-9
+[4] Deepa BG, Lokesh CK, Umamaheswari D. An enhanced deep learning framework for deepfake detection using EfficientNet-B3. Discover Computing 2026; 29 (1). doi: 10.1007/s10791-025-09890-x
+[5] Bhat NA, Giri KJ. Deepfake detection in images and videos: a survey on models, datasets and evaluation metrics. Multimedia Tools and Applications 2026; 85 (3). doi: 10.1007/s11042-026-21365-9
+[6] Alghamdi J, Luo S, Lin Y. A comprehensive survey on machine learning approaches for fake news detection. Multimedia Tools and Applications 2023; 83 (17): 51009–51067. doi: 10.1007/s11042-023-17470-8
+[7] Repede ȘE, Brad R. A review of automatic fake news detection: from traditional methods to large language models. Future Internet 2025; 17 (10): 435. doi: 10.3390/fi17100435
+[8] Alshuwaier FA, Alsulaiman FA. Fake news detection using machine learning and deep learning algorithms: a comprehensive review. Computers 2025; 14 (9): 394. doi: 10.3390/computers14090394
+[9] Rama Moorthy H, Avinash NJ, Krishnaraj Rao NS. Dual-stream graph-augmented transformer model integrating BERT and graph neural networks for context-aware fake news detection. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-05586-w
+[10] Naude M, Adebayo KJ, Nanda R. A machine learning approach to detecting fraudulent job types. AI and Society 2023; 38 (2): 1013–1024. doi: 10.1007/s00146-022-01469-0
+[11] Taneja K, Vashishtha J, Ratnoo S. Fraud-BERT: transformer-based context-aware online recruitment fraud detection. Discover Computing 2025; 28 (1). doi: 10.1007/s10791-025-09502-8
+[12] Papasavva A, Lundrigan S, Lowther E, Johnson S, Mariconti E et al. Applications of AI-based models for online fraud detection and analysis. Crime Science 2025. doi: 10.1186/s40163-025-00248-8
+[13] Momin MS, Sufian A, Barman D. Explainable deepfake detection across different modalities: an overview of methods and challenges. Image and Vision Computing 2025; 163: 105738. doi: 10.1016/j.imavis.2025.105738
+[14] Bezzaoui I, Stein C, Weinhardt C. Explainable AI for online disinformation detection: insights from a design science research project. Electronic Markets 2025; 35 (1). doi: 10.1007/s12525-025-00799-3
+[15] Tsigos K, Apostolidis E, Baxevanakis S. Towards quantitative evaluation of explainable AI methods for deepfake detection. In: 3rd ACM International Workshop on Multimedia AI against Disinformation; 2024. pp. 37–45. doi: 10.1145/3643491.3660292
+[16] Castro F, Gattulli V, Impedovo D. DeepDect: an explainable AI platform for face-swapping and face-generation deepfake detection. Multimedia Tools and Applications 2026; 85 (5). doi: 10.1007/s11042-026-21672-1
+[17] Men X, Mariano VY. Explainable fake news detection based on BERT and SHAP applied to COVID-19. International Journal of Modern Education and Computer Science 2024; 16 (1): 11–22. doi: 10.5815/ijmecs.2024.01.02
+[18] Mirsky Y, Lee W. The creation and detection of deepfakes: a survey. ACM Computing Surveys 2021; 54 (1): 1–41. doi: 10.1145/3425780
+[19] Moyo BV, Tuyikeze T, Matsebula F. An AI-driven conceptual framework for detecting fake news and deepfake content: a systematic review. Frontiers in Artificial Intelligence 2026; 9. doi: 10.3389/frai.2026.1737790
+[20] Tan D, Yang Y, Niu C, Li S, Yang D et al. A review of deep-learning-based multimodal forgery detection for video and audio. Discover Applied Sciences 2025; 7: 987. doi: 10.1007/s42452-025-07629-3
+[21] Khan AA, Laghari AA, Inam SA, Ullah S, Shahzad M et al. A survey on multimedia-enabled deepfake detection. Discover Computing 2025; 28: 48. doi: 10.1007/s10791-025-09550-0
+[22] Nguyen-Le HH, Tran VT, Nguyen DT, Le-Khac NA. Deepfake detection across image, video and audio: a comprehensive survey with empirical evaluation of generalization and robustness. Artificial Intelligence Review 2026. doi: 10.1007/s10462-026-11608-4
+[23] Samanta N. Analysing motivations of Ponzi victims in West Bengal, India. Humanities and Social Sciences Communications 2025; 12 (1). doi: 10.1057/s41599-025-04737-8
+[24] Franceschini I, Wyndham C, Le L. Imperfect victims: comparing Chinese and Vietnamese survivors of forced criminality in Southeast Asia's online scam industry. Asian Journal of Criminology 2026; 21 (1). doi: 10.1007/s11417-026-09495-3
+[25] Asiama AA. Pathways of intention: narratives of future withdrawal from cyber fraud among Ghanaian youth. Journal of Developmental and Life-Course Criminology 2026; 12 (1). doi: 10.1007/s40865-026-00306-y
+[26] Zhang Y, Pang Z, Huang S, Wang C, Zhou X. Unmasking AI-created visual content: a review of generated images and deepfake detection technologies. Journal of King Saud University Computer and Information Sciences 2025; 37 (6): 148. doi: 10.1007/s44443-025-00154-8
+[27] Bipin PR, Biju AK, Balagopal M, Shyam B et al. DeepFake detection using CNN models with explainable AI techniques. In: 2025 4th International Conference on Advances in Computing, Communication, Embedded and Secure Systems (ACCESS); 2025. doi: 10.1109/ACCESS65134.2025.11135663
+[28] Omar K, Sakr RH, Alrahmawy MF. An ensemble of CNNs with self-attention mechanism for deepfake video detection. Neural Computing and Applications 2024; 36 (6): 2749–2765. doi: 10.1007/s00521-023-09196-3
+[29] Duan H, Jiang Q, Jin X. MF-Net: multi-feature fusion network for face forgery detection. Complex and Intelligent Systems 2025; 11 (1). doi: 10.1007/s40747-024-01634-6
+[30] Gong R, He R, Zhang D. Robust face forgery detection integrating local and global texture information. EURASIP Journal on Information Security 2025; 2025 (1). doi: 10.1186/s13635-025-00189-4
+[31] Javiya D, Jethava G, Parmar H. Enhancing deepfake detection with Adaptive-DCGAN and Lite-CNN. Discover Applied Sciences 2025; 7 (11). doi: 10.1007/s42452-025-07690-y
+[32] Sheng Y, Zou Z, Yu Z. ID-insensitive deepfake detection model based on multi-attention mechanism. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-96254-6
+[33] Alrahhal M, Alqahtani F, Latip R. Deepfake face detection using hybrid bag-of-visual-words and multi-CNN feature fusion. Scientific Reports 2026. doi: 10.1038/s41598-026-53464-w
+[34] Chatterjee S. Optimal transport-guided framework for adversarially robust deepfake detection. Discover Computing 2026; 29: 40. doi: 10.1007/s10791-026-09904-2
+[35] Alanazi S, Asif S, Jain C. Robust deepfake detection through a mobile application for real-time image identification. Human-Intelligent Systems Integration 2026. doi: 10.1007/s42454-026-00089-z
+[36] Magesh AP, Ramakrishnan SSM, Arumuga Arun R. Building an efficient deepfake detection system using CNNs and transformers. Discover Computing 2025; 28 (1). doi: 10.1007/s10791-025-09586-2
+[37] Soudy AH, Sayed O, Tag-Elser H. Deepfake detection using convolutional vision transformers and convolutional neural networks. Neural Computing and Applications 2024; 36 (31): 19759–19775. doi: 10.1007/s00521-024-10181-7
+[38] Passos LA, Jodas D, Costa KAP. A review of deep-learning-based approaches for deepfake content detection. Expert Systems 2024; 41 (8). doi: 10.1111/exsy.13570
+[39] Chen J, Che X, Xu K. Cross-modal deepfake detection: integrating textual and frequency domains. Journal of Cloud Computing 2026. doi: 10.1186/s13677-026-00898-2
+[40] Liu X, Cheng A, Xiao M. Deep hashing framework for proactive deepfake retrieval and detection. Journal of King Saud University Computer and Information Sciences 2026; 38: 257. doi: 10.1007/s44443-026-00636-3
+[41] Wani TM, Qadri SAA, Ashraf A, Amerini I. An interpretable adaptive spectro-temporal diffusion transformer for audio deepfake detection. EURASIP Journal on Information Security 2025. doi: 10.1186/s13635-025-00217-3
+[42] Jin X, Guan W, Wang W. Towards reliable deepfake detection from an uncertainty calibration perspective. Visual Intelligence 2025; 3: 28. doi: 10.1007/s44267-025-00100-2
+[43] Mansoor N, Iliev AI. Explainable AI for deepfake detection. Applied Sciences 2025; 15 (2): 725. doi: 10.3390/app15020725
+[44] Lv J, Gao Y, Li L. Multi-modal fake news detection: a comprehensive survey. Journal of King Saud University Computer and Information Sciences 2025; 37 (9). doi: 10.1007/s44443-025-00317-7
+[45] Yan F, Zhang M, Wei B, Ren K, Jiang W. SARD: fake news detection based on CLIP contrastive learning and multimodal semantic alignment. Journal of King Saud University Computer and Information Sciences 2024; 36 (8): 102160. doi: 10.1016/j.jksuci.2024.102160
+[46] Ayyasamy RK, Ponnusamy C, Bhargavi KN. A hybrid deep learning framework for fake news detection using LSTM-CGPNN and metaheuristic optimization. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-25311-x
+[47] Ni'mah I, Wijayanti R, Santosa A. A simple contrastive embedding framework for low-resource fake news detection. Neural Computing and Applications 2025; 37 (26): 21407–21433. doi: 10.1007/s00521-025-11467-0
+[48] Muthukumar S, Fernandez JG, Ambika BJ. An LSTM-BERT model for false news detection. In: Data Science and Exploration in Artificial Intelligence, CCIS vol. 2689. Springer; 2026. pp. 124–134. doi: 10.1007/978-3-032-19318-6_12
+[49] Kumar C, Bansal M, Khan MA. Graph-augmented transformer ensemble framework for robust and scalable fake news detection. Scientific Reports 2025; 16 (1). doi: 10.1038/s41598-025-31653-3
+[50] Manjunath GK, Faizz Ahmad KS, Pamidimukkala SG. Hybrid optimization-driven fake news detection using reinforced transformer models. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-99936-3
+[51] Alqadi BS, Alsuhibany SA, Yousafzai SN. Transfer-learning-driven fake news detection and classification using large language models. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-10670-2
+[52] Chalehchaleh R, Farahbakhsh R, Crespi N. Addressing data scarcity in multilingual fake news detection: an LLM-based dataset augmentation approach. Social Network Analysis and Mining 2025; 15 (1). doi: 10.1007/s13278-025-01505-z
+[53] Jin W, Wang N, Tao T. A veracity-dissemination-consistency-based few-shot fake news detection framework. Scientific Reports 2024; 14: 19470. doi: 10.1038/s41598-024-70039-9
+[54] Nandgaonkar S, Mane S. Multimodal fake news detection in Hindi using adaptive gated fusion. Discover Computing 2026; 29: 271. doi: 10.1007/s10791-026-10157-2
+[55] He J. A unified multimodal large model framework for cross-platform fake news spread chain detection. Journal of King Saud University Computer and Information Sciences 2026. doi: 10.1007/s44443-026-00772-w
+[56] Almandouh ME, Alrahmawy MF, Eisa M. Ensemble-based high-performance deep learning models for fake news detection. Scientific Reports 2024; 14 (1). doi: 10.1038/s41598-024-76286-0
+[57] LekshmiAmmal HR, Madasamy AK. A reasoning-based explainable multimodal fake news detection for low-resource language using large language models and transformers. Journal of Big Data 2025; 12 (1). doi: 10.1186/s40537-025-01093-x
+[58] Geto AD, Emiru ED, Seid NE. Multimodal-based Amharic fake news detection using CNN and attention-based BiLSTM. Scientific Reports 2025; 15 (1). doi: 10.1038/s41598-025-17579-w
+[59] Sneha SG, Sen A, Malik S. BiLSTM-LIME: integrating natural language processing and machine learning models for fake news detection. Discover Artificial Intelligence 2026; 6 (1). doi: 10.1007/s44163-026-00852-w
+[60] Ji W, Lv H, Zhao H, Zimmermann R. Explainable multi-granularity attribution reasoning framework for fake news detection. npj Artificial Intelligence 2026; 2. doi: 10.1038/s44387-026-00093-3
+[61] Hajjej F, Hamid M, Alluhaidan AS. An integrated framework for proactive deepfake mitigation via attention-driven watermarking and blockchain-based authenticity verification. Scientific Reports 2026. doi: 10.1038/s41598-026-40166-6
+[62] Athira AB, Madhu Kumar SD, Chacko AM. A review on fake news identification in online social networks. In: Chakravarthy V, Bhateja V, Flores Fuentes W, Anguera J, Vasavi KP (editors). Advances in Signal Processing, Embedded Systems and IoT: Proceedings of Seventh ICMEET-2022. Lecture Notes in Electrical Engineering, vol 992. Springer, Singapore; 2023. pp. 431–437. doi: 10.1007/978-981-19-8865-3_39

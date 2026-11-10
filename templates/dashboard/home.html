@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="glass card card-hero">
+  <h1 class="page-title">XAI-Verify</h1>
+  <p class="text-sm muted" style="color:var(--primary);font-weight:500;">Research Title</p>
+  <p class="muted mt-3">{{ research_title }}</p>
+  <div class="flex-wrap mt-4 gap-3">
+    <a href="{% url 'deepfake_analyze' %}" class="btn-primary">Start Analysis</a>
+    <a href="{% url 'about' %}" class="btn-outline">About Research</a>
+  </div>
+</div>
+<div class="module-grid mt-4">
+  <a href="{% url 'deepfake_analyze' %}" class="glass module-card">
+    <h3>DeepFake Detection</h3>
+    <p class="text-sm muted mt-2">ResNet50 + Grad-CAM explanations</p>
+  </a>
+  <a href="{% url 'misinformation_index' %}" class="glass module-card">
+    <h3>Misinformation Detection</h3>
+    <p class="text-sm muted mt-2">Fake news &amp; recruitment scam analysis</p>
+  </a>
+  <a href="{% url 'reports_history' %}" class="glass module-card">
+    <h3>Analysis History</h3>
+    <p class="text-sm muted mt-2">Past results &amp; PDF reports</p>
+  </a>
+</div>
+{% endblock %}

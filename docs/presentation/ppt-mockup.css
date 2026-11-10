@@ -1,0 +1,659 @@
+/* XAI-Verify — 4-page PPT mockup (16:9 slides) */
+
+:root {
+  --slide-w: 1280px;
+  --slide-h: 720px;
+  --sidebar-bg: #0f1b33;
+  --sidebar-w: 200px;
+  --primary: #4361ee;
+  --primary-light: #eef1ff;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #ea580c;
+  --muted: #64748b;
+  --text: #1e293b;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --bg: #f4f7fb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: #cbd5e1;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.ppt-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: #0f172a;
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.ppt-toolbar a {
+  color: #93c5fd;
+}
+
+.ppt-wrap {
+  padding: 3.5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.slide {
+  width: var(--slide-w);
+  height: var(--slide-h);
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.slide-label {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #475569;
+  margin-top: -1.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+/* ---- Overview / poster slide ---- */
+.slide-overview {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-title {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.overview-title h1 {
+  font-size: 1.35rem;
+  color: var(--primary);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.overview-title p {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.arch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 10px;
+  flex: 1;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.arch-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.arch-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.62rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.arch-box h3 {
+  font-size: 0.68rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.arch-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.arch-box li {
+  padding: 3px 0;
+  color: #334155;
+}
+
+.arch-box li::before {
+  content: "▸ ";
+  color: var(--primary);
+}
+
+.arch-center {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.arch-module {
+  background: var(--card);
+  border: 2px solid var(--primary-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 0.6rem;
+}
+
+.arch-module strong {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--primary);
+  margin-bottom: 3px;
+}
+
+.arch-arrow {
+  text-align: center;
+  color: var(--primary);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.tech-bar {
+  margin-top: 12px;
+  background: var(--sidebar-bg);
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center;
+  font-size: 0.62rem;
+}
+
+.tech-bar strong {
+  color: #fff;
+  margin-right: 4px;
+}
+
+.tech-pill {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.ui-preview-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ui-thumb {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.55rem;
+}
+
+.ui-thumb-head {
+  background: var(--sidebar-bg);
+  color: #fff;
+  padding: 4px 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ui-thumb-body {
+  padding: 6px;
+  color: var(--muted);
+  min-height: 48px;
+}
+
+/* ---- App mockup shell (shared) ---- */
+.mock-app {
+  display: flex;
+  height: 100%;
+}
+
+.mock-sidebar {
+  width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  color: #cbd5e1;
+  padding: 16px 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-sidebar-brand {
+  padding: 0 14px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 10px;
+}
+
+.mock-sidebar-brand h2 {
+  font-size: 0.85rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.mock-sidebar-brand p {
+  font-size: 0.5rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.mock-nav a {
+  display: block;
+  padding: 7px 14px;
+  font-size: 0.58rem;
+  color: #94a3b8;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.mock-nav a.active {
+  background: rgba(67, 97, 238, 0.2);
+  color: #fff;
+  border-left-color: var(--primary);
+  font-weight: 600;
+}
+
+.mock-nav .sub {
+  padding-left: 22px;
+  font-size: 0.52rem;
+}
+
+.mock-main {
+  flex: 1;
+  padding: 14px 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mock-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mock-topbar h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mock-user {
+  font-size: 0.55rem;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.mock-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.mock-card h3 {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* ---- Page 1: Dashboard ---- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-card .num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.stat-card .lbl {
+  font-size: 0.55rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.mock-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.52rem;
+}
+
+.mock-table th {
+  text-align: left;
+  padding: 6px 8px;
+  background: #f1f5f9;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+
+.mock-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 0.48rem;
+  font-weight: 700;
+}
+
+.badge-real {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-fake {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.badge-scam {
+  background: #ffedd5;
+  color: var(--warning);
+}
+
+/* ---- Page 2: Deepfake ---- */
+.deepfake-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.upload-preview {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #64748b 0%, #334155 50%, #475569 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-preview::after {
+  content: "";
+  position: absolute;
+  inset: 20% 25%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #fcd9b6, #c4956a);
+}
+
+.result-big {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--success);
+  line-height: 1;
+}
+
+.conf-bar-wrap {
+  margin: 8px 0;
+}
+
+.conf-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.52rem;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.conf-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.conf-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--success), #22c55e);
+}
+
+.heatmap-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #64748b, #334155);
+}
+
+.heatmap-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 18% 22%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #fcd9b6, #c4956a);
+}
+
+.heatmap-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 35% 40% at 48% 38%, rgba(239, 68, 68, 0.75), transparent),
+    radial-gradient(ellipse 20% 25% at 55% 55%, rgba(251, 146, 60, 0.5), transparent);
+  mix-blend-mode: screen;
+}
+
+.forensics-table {
+  width: 100%;
+  font-size: 0.5rem;
+  border-collapse: collapse;
+}
+
+.forensics-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.forensics-table td:first-child {
+  color: var(--muted);
+  width: 45%;
+}
+
+.mock-btns {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.btn {
+  font-size: 0.5rem;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-outline {
+  background: var(--card);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+/* ---- Page 3: Fake News ---- */
+.news-text-box {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.55rem;
+  color: #334155;
+  line-height: 1.5;
+  min-height: 70px;
+}
+
+.lime-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lime-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 36px;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.5rem;
+}
+
+.lime-bar-bg {
+  height: 10px;
+  background: #fee2e2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lime-bar-fill {
+  height: 100%;
+  background: var(--danger);
+  border-radius: 4px;
+}
+
+.lime-bar-fill.low {
+  background: #fca5a5;
+}
+
+/* ---- Page 4: Recruitment ---- */
+.recruit-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 10px;
+  flex: 1;
+}
+
+.form-field {
+  margin-bottom: 8px;
+}
+
+.form-field label {
+  display: block;
+  font-size: 0.5rem;
+  color: var(--muted);
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.form-field .value {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 0.52rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.trust-score {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--danger);
+}
+
+.risk-list {
+  list-style: none;
+}
+
+.risk-list li {
+  font-size: 0.52rem;
+  padding: 5px 0;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.risk-list li::before {
+  content: "⚠";
+  color: var(--warning);
+  font-size: 0.65rem;
+}
+
+.risk-list li.ok::before {
+  content: "✓";
+  color: var(--success);
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .ppt-toolbar {
+    display: none;
+  }
+
+  .ppt-wrap {
+    padding: 0;
+    gap: 0;
+  }
+
+  .slide {
+    page-break-after: always;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .slide-label {
+    display: none;
+  }
+}

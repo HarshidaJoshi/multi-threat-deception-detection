@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Fake News{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Fake News Detection</h1>
+  <p class="page-sub">Default: TF-IDF + LogReg (trained on WELFake). Paste a <strong>full article</strong> (minimum <strong>{{ fake_news_min_chars }} characters</strong>) — headlines or a single short paragraph are blocked because models were trained on complete news stories.</p>
+</div>
+
+{% if not tfidf_ready %}
+<div class="glass card" style="border-left: 4px solid #f59e0b; margin-bottom: 1rem;">
+  <strong>TF-IDF model not installed.</strong>
+  The app will use BERT (Hugging Face) or weak keyword rules until you train the default model:
+  <code>python manage.py train_fake_news</code>
+  (needs <code>datasets/text/WELFake_Dataset.csv</code>).
+</div>
+{% endif %}
+
+<div class="glass card">
+  <h2>Enter Text</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">{{ form.model.label_tag }} {{ form.model }}</div>
+    <div class="form-group">
+      {{ form.text.label_tag }}
+      {% if form.text.help_text %}<p class="text-sm muted" style="margin:0.25rem 0 0.5rem;">{{ form.text.help_text }}</p>{% endif %}
+      {{ form.text }}
+      {% if form.text.errors %}
+      <ul class="errorlist">{% for e in form.text.errors %}<li>{{ e }}</li>{% endfor %}</ul>
+      {% endif %}
+      <p class="text-sm muted" style="margin-top:0.5rem;">
+        Characters: <span id="fn-char-count">0</span> / {{ fake_news_min_chars }} minimum
+      </p>
+    </div>
+    <button type="submit" class="btn-primary" id="fn-analyze-btn">Analyze Text</button>
+  </form>
+</div>
+
+{% if result %}
+<div class="glass card">
+  <h2>Results</h2>
+  {% include "components/model_info.html" with result=result %}
+  <div class="flex-wrap gap-3 mb-4">
+    <span class="{% if 'Fake' in result.prediction %}badge-fake{% else %}badge-real{% endif %}">{{ result.prediction }}</span>
+    <span class="text-sm muted">Confidence: {{ result.confidence|floatformat:1 }}%</span>
+  </div>
+  {% include "components/explain_panel.html" with result=result %}
+</div>
+{% endif %}
+<script>
+(function () {
+  var min = {{ fake_news_min_chars|default:500 }};
+  var ta = document.getElementById('fake-news-text') || document.getElementById('id_text');
+  var countEl = document.getElementById('fn-char-count');
+  var btn = document.getElementById('fn-analyze-btn');
+  function update() {
+    if (!ta || !countEl) return;
+    var n = (ta.value || '').trim().length;
+    countEl.textContent = String(n);
+    countEl.style.color = n >= min ? 'var(--success, #16a34a)' : 'var(--danger, #dc2626)';
+    if (btn) btn.disabled = n > 0 && n < min;
+  }
+  if (ta) {
+    ta.addEventListener('input', update);
+    update();
+  }
+})();
+</script>
+{% endblock %}

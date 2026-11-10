@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Analysis History{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Analysis History</h1>
+  <p class="page-sub">{% if demo_mode %}Session-based demo history{% else %}Stored in MySQL{% endif %}</p>
+</div>
+
+<div class="glass card">
+  {% if records %}
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Module</th>
+          <th>Label</th>
+          <th>Confidence</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in records %}
+        <tr>
+          {% if demo_mode %}
+          <td>{{ r.id }}</td>
+          <td>{{ r.module }}</td>
+          <td>{{ r.label }}</td>
+          <td>{{ r.confidence|floatformat:1 }}%</td>
+          <td>{{ r.created_at|slice:":16" }}</td>
+          <td>
+            <a href="{% url 'reports_detail' r.id %}">View</a> ·
+            <a href="{% url 'reports_download' r.id %}">PDF</a>
+          </td>
+          {% else %}
+          <td>{{ r.pk }}</td>
+          <td>{{ r.get_module_display }}</td>
+          <td>{{ r.label }}</td>
+          <td>{{ r.confidence|floatformat:1 }}%</td>
+          <td>{{ r.created_at|date:"Y-m-d H:i" }}</td>
+          <td>
+            <a href="{% url 'reports_detail' r.pk %}">View</a> ·
+            <a href="{% url 'reports_download' r.pk %}">PDF</a>
+          </td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="muted">No analyses yet. Run a module from the sidebar.</p>
+  {% endif %}
+</div>
+{% endblock %}

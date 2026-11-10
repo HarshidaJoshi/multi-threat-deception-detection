@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<div class="page-header"><h1 class="page-title">About Research</h1></div>
+<article class="glass about-document">
+  <section class="about-section">
+    <h2 class="about-heading">Dissertation Title</h2>
+    <p class="about-lead">{{ research_title }}</p>
+    <p class="muted mt-2">
+      XAI-Verify is a research prototype that combines deep learning detection with
+      explainable AI (Grad-CAM for images, exact word contributions for text) for transparent decision support.
+    </p>
+  </section>
+  <section class="about-section">
+    <h2 class="about-heading">Research Modules</h2>
+    <ul class="about-list text-sm">
+      <li><strong>DeepFake Image Detection</strong> — ResNet50 features with a trained MLP head on 100,000 real vs. AI-generated face images (95.4% held-out accuracy), with Grad-CAM heatmaps computed from the model showing where it looked.</li>
+      <li><strong>Misinformation Detection</strong> — Text classifiers trained on WELFake (fake news) and EMSCAD (recruitment scams), with exact word contributions from the linear models.
+        <ul class="about-sublist">
+          <li><em>Fake News</em> — news articles and social posts</li>
+          <li><em>Recruitment Scam</em> — fraudulent job postings: a classifier trained on EMSCAD plus employer and website checks</li>
+        </ul>
+      </li>
+      <li><strong>Explainable AI</strong> — Grad-CAM for images; for text, each word's exact contribution to the linear model's score, shown with every result.</li>
+    </ul>
+  </section>
+  <section class="about-section">
+    <h2 class="about-heading">How to Check a Government Website</h2>
+    <p class="text-sm muted">
+      For recruitment scam detection, users can check whether a job website looks like an official
+      government site or a fake one. This project uses simple domain rules — it does not connect to
+      <a href="https://india.gov.in/" target="_blank" rel="noopener noreferrer">India.gov.in</a> automatically.
+      Users should verify jobs on official portals themselves.
+    </p>
+    <p class="text-sm mt-2"><strong>How to check (simple steps):</strong></p>
+    <ol class="about-list text-sm">
+      <li>Look at the website address. Real Indian government sites usually end with <strong>.gov.in</strong>, <strong>.nic.in</strong>, or <strong>.ac.in</strong> (for universities).</li>
+      <li>Check that the link starts with <strong>https://</strong> (secure connection).</li>
+      <li>Open <a href="https://india.gov.in/" target="_blank" rel="noopener noreferrer">India.gov.in</a>, <a href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer">NCS.gov.in</a>, or <a href="https://employmentnews.gov.in/" target="_blank" rel="noopener noreferrer">Employment News</a> and search for the same job or department.</li>
+      <li>Be careful if the job asks for registration fee, interview fee, or payment before joining. Real government jobs rarely ask for money on unofficial websites.</li>
+    </ol>
+    <div class="about-table-wrap mt-3">
+      <table class="about-table">
+        <thead>
+          <tr>
+            <th>Website type</th>
+            <th>Government registered?</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>.gov.in / .nic.in</td>
+            <td>Yes — government pattern</td>
+            <td>employmentnews.gov.in</td>
+          </tr>
+          <tr>
+            <td>.ac.in (university)</td>
+            <td>Yes — government/education pattern</td>
+            <td>iitb.ac.in</td>
+          </tr>
+          <tr>
+            <td>Private company (official)</td>
+            <td>No — but can be real (not government)</td>
+            <td>infosys.com, tcs.com</td>
+          </tr>
+          <tr>
+            <td>.xyz, .top, .tk</td>
+            <td>No — suspicious, often used in scams</td>
+            <td>railway-jobs.xyz</td>
+          </tr>
+          <tr>
+            <td>Unknown website</td>
+            <td>Cannot confirm — check on India.gov.in</td>
+            <td>Verify manually</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm muted mt-3">
+      Official links for manual verification:
+      <a href="https://india.gov.in/" target="_blank" rel="noopener noreferrer">India.gov.in</a> ·
+      <a href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer">NCS.gov.in</a> ·
+      <a href="https://employmentnews.gov.in/" target="_blank" rel="noopener noreferrer">Employment News</a>
+    </p>
+  </section>
+  <section class="about-section">
+    <h2 class="about-heading">Technology Stack</h2>
+    <ul class="about-list text-sm">
+      <li>Django 4.2, MySQL (XAMPP), Bootstrap-inspired UI</li>
+      <li>TensorFlow (EfficientNetB0), HuggingFace Transformers (BERT)</li>
+      <li>ReportLab for PDF analysis reports</li>
+    </ul>
+  </section>
+</article>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Recruitment Scam{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Recruitment Scam Detection</h1>
+  <p class="page-sub">Misinformation Detection — job text forensics, employer verification, domain analysis</p>
+</div>
+
+<div class="glass card">
+  <h2>Job Post Verification</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.job_text.id_for_label }}">{{ form.job_text.label }}</label>
+      {{ form.job_text }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.company_name.id_for_label }}">{{ form.company_name.label }}</label>
+      {{ form.company_name }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.website_url.id_for_label }}">{{ form.website_url.label }}</label>
+      {{ form.website_url }}
+    </div>
+    <button type="submit" class="btn-primary">Verify Job Post</button>
+  </form>
+</div>
+
+{% if result %}
+<div class="glass card">
+  <h2>Verdict</h2>
+  {% if "Fake" in result.prediction %}
+  <span class="badge-fake">{{ result.prediction }}</span>
+  {% else %}
+  <span class="badge-real">{{ result.prediction }}</span>
+  {% endif %}
+  <p class="text-sm muted mt-3">Fraud risk: {{ result.fraud_risk_score|floatformat:1 }}%</p>
+  <p class="text-sm muted">Authenticity score: {{ result.trust_score|floatformat:1 }}%</p>
+  <p class="text-sm muted">Website status: {{ result.website_status }}</p>
+  {% if result.domain %}
+  <p class="text-sm muted">Domain checked: <code>{{ result.domain }}</code></p>
+  {% endif %}
+  {% if result.employer_in_reference_list %}
+  <p class="text-sm mt-2">Employer found in reference list</p>
+  {% else %}
+  <p class="text-sm mt-2 muted">Employer not in reference list</p>
+  {% endif %}
+</div>
+
+<div class="glass card">
+  <h2>Explainable AI</h2>
+  {% include "components/explain_panel.html" with result=result %}
+  {% if record_ref %}
+  <p class="mt-3">
+    {% if demo_mode %}
+    <a href="{% url 'reports_detail' record_ref.id %}" class="btn-outline">View in history</a>
+    <a href="{% url 'reports_download' record_ref.id %}" class="btn-outline">Download PDF</a>
+    {% else %}
+    <a href="{% url 'reports_detail' record_ref.pk %}" class="btn-outline">View in history</a>
+    <a href="{% url 'reports_download' record_ref.pk %}" class="btn-outline">Download PDF</a>
+    {% endif %}
+  </p>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

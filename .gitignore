@@ -1,0 +1,48 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Secrets & local env
+.env
+media/
+generated_reports/
+staticfiles/
+
+# Models & training artifacts
+models/*.keras
+trained_models/
+benchmark_out/
+text_benchmark_out/
+
+# Datasets (download from sources in paper; keep README stubs only)
+dataset/real/**
+dataset/fake/**
+!dataset/real/.gitkeep
+!dataset/fake/.gitkeep
+datasets/**/*
+!datasets/**/README.md
+data/**/*
+!data/**/README.md
+deepfakeimage dataset/
+deepfakeimage dataset.zip
+fake-and-real-news-dataset/
+
+# Archives & run logs
+*.zip
+*.log
+*.err
+
+# Legacy stacks
+backend/uploads/
+backend/reports/
+backend/data/
+backend/*.db
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+legacy/
+
+.DS_Store

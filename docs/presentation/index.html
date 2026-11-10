@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XAI-Verify — 4-Page PPT Design</title>
+  <link rel="stylesheet" href="ppt-mockup.css">
+</head>
+<body>
+  <div class="ppt-toolbar">
+    <span><strong>XAI-Verify</strong> — Presentation mockup (1280×720 slides). Screenshot each slide for PowerPoint.</span>
+    <span>Ctrl+P → Save as PDF &nbsp;|&nbsp; Open: <code>docs/presentation/index.html</code></span>
+  </div>
+
+  <div class="ppt-wrap">
+
+    <!-- OVERVIEW SLIDE (Title + Architecture + Tech) -->
+    <p class="slide-label">Overview — Title, Architecture &amp; Technology Stack</p>
+    <section class="slide slide-overview" id="slide-overview">
+      <div class="overview-title">
+        <h1>XAI-Verify: A Multi-Threat Explainable AI Framework for Digital Deception Detection and Evidence-Aware Authenticity Verification</h1>
+        <p>M.Tech Dissertation Research Prototype — Django Web Application</p>
+      </div>
+
+      <div class="arch-grid">
+        <div class="arch-col">
+          <div class="arch-box">
+            <h3>User Inputs</h3>
+            <ul>
+              <li>Upload Image</li>
+              <li>Enter News Text</li>
+              <li>Enter Job Post + Company + Website</li>
+            </ul>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-box">
+            <h3>Evidence-Aware Layer</h3>
+            <ul>
+              <li>Confidence Score</li>
+              <li>Trust Score</li>
+              <li>Evidence Summary</li>
+            </ul>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-box">
+            <h3>Output</h3>
+            <ul>
+              <li>Prediction + Explanation</li>
+              <li>PDF Report Download</li>
+              <li>MySQL History Storage</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="arch-center">
+          <div class="arch-box" style="text-align:center;border-color:var(--primary);">
+            <h3>Django Web Application</h3>
+          </div>
+          <div class="arch-module">
+            <strong>Module 1 — DeepFake Image Detection</strong>
+            EfficientNetB0 + Grad-CAM Heatmap
+          </div>
+          <div class="arch-module">
+            <strong>Module 2 — Fake News Detection</strong>
+            BERT / RoBERTa + LIME + SHAP
+          </div>
+          <div class="arch-module">
+            <strong>Module 3 — Recruitment Scam Detection</strong>
+            Rule-Based Risk Engine + Trust Score
+          </div>
+        </div>
+
+        <div class="arch-col">
+          <div class="arch-box">
+            <h3>Explainable AI (XAI)</h3>
+            <ul>
+              <li>Grad-CAM — image saliency</li>
+              <li>LIME — token importance</li>
+              <li>SHAP — feature contributions</li>
+            </ul>
+          </div>
+          <div class="arch-box">
+            <h3>4 Application Pages</h3>
+            <div class="ui-preview-row">
+              <div class="ui-thumb"><div class="ui-thumb-head">Dashboard</div><div class="ui-thumb-body">Stats &amp; history</div></div>
+              <div class="ui-thumb"><div class="ui-thumb-head">DeepFake</div><div class="ui-thumb-body">Image + heatmap</div></div>
+              <div class="ui-thumb"><div class="ui-thumb-head">Fake News</div><div class="ui-thumb-body">Text + LIME</div></div>
+              <div class="ui-thumb"><div class="ui-thumb-head">Recruitment</div><div class="ui-thumb-body">Job scam check</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-bar">
+        <strong>Technologies:</strong>
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">Django 4.2</span>
+        <span class="tech-pill">TensorFlow</span>
+        <span class="tech-pill">HuggingFace</span>
+        <span class="tech-pill">OpenCV</span>
+        <span class="tech-pill">Scikit-learn</span>
+        <span class="tech-pill">SHAP</span>
+        <span class="tech-pill">LIME</span>
+        <span class="tech-pill">MySQL</span>
+        <span class="tech-pill">ReportLab</span>
+      </div>
+    </section>
+
+    <!-- PAGE 1: DASHBOARD -->
+    <p class="slide-label">Page 1 — Web Application Dashboard</p>
+    <section class="slide" id="slide-1">
+      <div class="mock-app">
+        <aside class="mock-sidebar">
+          <div class="mock-sidebar-brand">
+            <h2>XAI-Verify</h2>
+            <p>Explainable AI for DeepFake &amp; Misinformation Detection</p>
+          </div>
+          <nav class="mock-nav">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">DeepFake Detection</a>
+            <a href="#">Misinformation Detection</a>
+            <a href="#" class="sub">Fake News</a>
+            <a href="#" class="sub">Recruitment Scam</a>
+            <a href="#">Analysis History</a>
+            <a href="#">About Research</a>
+          </nav>
+        </aside>
+        <main class="mock-main">
+          <div class="mock-topbar">
+            <h2>Dashboard</h2>
+            <span class="mock-user">👤 Research User</span>
+          </div>
+          <p style="font-size:0.55rem;color:var(--muted);">Welcome to XAI-Verify — multi-threat digital deception detection platform.</p>
+          <div class="stat-row">
+            <div class="stat-card">
+              <div class="num">24</div>
+              <div class="lbl">DeepFake Analyses</div>
+            </div>
+            <div class="stat-card">
+              <div class="num">18</div>
+              <div class="lbl">Fake News Analyses</div>
+            </div>
+            <div class="stat-card">
+              <div class="num">12</div>
+              <div class="lbl">Recruitment Checks</div>
+            </div>
+          </div>
+          <div class="mock-card" style="flex:1;overflow:hidden;">
+            <h3>Recent Analyses</h3>
+            <table class="mock-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Type</th>
+                  <th>Input Summary</th>
+                  <th>Prediction</th>
+                  <th>Score</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#042</td>
+                  <td>DeepFake</td>
+                  <td>portrait_upload.jpg</td>
+                  <td><span class="badge badge-real">Real</span></td>
+                  <td>87.3%</td>
+                  <td>21 Jul 2026</td>
+                </tr>
+                <tr>
+                  <td>#041</td>
+                  <td>Fake News</td>
+                  <td>Breaking: miracle cure...</td>
+                  <td><span class="badge badge-fake">Fake</span></td>
+                  <td>93.2%</td>
+                  <td>21 Jul 2026</td>
+                </tr>
+                <tr>
+                  <td>#040</td>
+                  <td>Recruitment</td>
+                  <td>ABC Solutions — WFH job</td>
+                  <td><span class="badge badge-scam">Scam</span></td>
+                  <td>23/100</td>
+                  <td>20 Jul 2026</td>
+                </tr>
+                <tr>
+                  <td>#039</td>
+                  <td>DeepFake</td>
+                  <td>ai_portrait_saree.png</td>
+                  <td><span class="badge badge-fake">Fake</span></td>
+                  <td>91.5%</td>
+                  <td>20 Jul 2026</td>
+                </tr>
+                <tr>
+                  <td>#038</td>
+                  <td>Fake News</td>
+                  <td>NASA confirms Artemis...</td>
+                  <td><span class="badge badge-real">Real</span></td>
+                  <td>78.4%</td>
+                  <td>19 Jul 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PAGE 2: DEEPFAKE -->
+    <p class="slide-label">Page 2 — DeepFake Image Detection</p>
+    <section class="slide" id="slide-2">
+      <div class="mock-app">
+        <aside class="mock-sidebar">
+          <div class="mock-sidebar-brand">
+            <h2>XAI-Verify</h2>
+            <p>Explainable AI for DeepFake &amp; Misinformation Detection</p>
+          </div>
+          <nav class="mock-nav">
+            <a href="#">Dashboard</a>
+            <a href="#" class="active">DeepFake Detection</a>
+            <a href="#">Misinformation Detection</a>
+            <a href="#" class="sub">Fake News</a>
+            <a href="#" class="sub">Recruitment Scam</a>
+            <a href="#">Analysis History</a>
+            <a href="#">About Research</a>
+          </nav>
+        </aside>
+        <main class="mock-main">
+          <div class="mock-topbar">
+            <h2>DeepFake Image Detection</h2>
+            <span class="mock-user">EfficientNetB0 + Grad-CAM</span>
+          </div>
+          <div class="deepfake-grid">
+            <div>
+              <div class="mock-card">
+                <h3>Uploaded Image</h3>
+                <div class="upload-preview" aria-label="Sample portrait"></div>
+              </div>
+              <div class="mock-card" style="margin-top:8px;">
+                <h3>Prediction Result</h3>
+                <div class="result-big">REAL</div>
+                <p style="font-size:0.55rem;color:var(--muted);margin:4px 0;">Confidence: <strong style="color:var(--success);">87.34%</strong></p>
+                <div class="conf-bar-wrap">
+                  <div class="conf-bar-label"><span>Real</span><span>87%</span></div>
+                  <div class="conf-bar"><div class="conf-bar-fill" style="width:87%"></div></div>
+                </div>
+                <div class="conf-bar-wrap">
+                  <div class="conf-bar-label"><span>Fake / AI</span><span>13%</span></div>
+                  <div class="conf-bar"><div class="conf-bar-fill" style="width:13%;background:#fca5a5;"></div></div>
+                </div>
+                <div class="mock-btns">
+                  <button class="btn btn-primary">Download Report (PDF)</button>
+                  <button class="btn btn-outline">New Analysis</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mock-card">
+                <h3>Grad-CAM Heatmap (Explainable AI)</h3>
+                <div class="heatmap-wrap">
+                  <div class="heatmap-overlay"></div>
+                </div>
+                <p style="font-size:0.48rem;color:var(--muted);margin-top:6px;">Red regions = areas the model focused on for its decision</p>
+              </div>
+              <div class="mock-card" style="margin-top:8px;">
+                <h3>Image Forensics (Baseline)</h3>
+                <table class="forensics-table">
+                  <tr><td>EXIF metadata</td><td>Present</td></tr>
+                  <tr><td>Sharpness score</td><td>0.72 (normal)</td></tr>
+                  <tr><td>Noise / texture</td><td>Natural grain</td></tr>
+                  <tr><td>File format</td><td>JPEG</td></tr>
+                  <tr><td>Compression artifacts</td><td>Low</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PAGE 3: FAKE NEWS -->
+    <p class="slide-label">Page 3 — Fake News Detection</p>
+    <section class="slide" id="slide-3">
+      <div class="mock-app">
+        <aside class="mock-sidebar">
+          <div class="mock-sidebar-brand">
+            <h2>XAI-Verify</h2>
+            <p>Explainable AI for DeepFake &amp; Misinformation Detection</p>
+          </div>
+          <nav class="mock-nav">
+            <a href="#">Dashboard</a>
+            <a href="#">DeepFake Detection</a>
+            <a href="#" class="active">Misinformation Detection</a>
+            <a href="#" class="sub active">Fake News</a>
+            <a href="#" class="sub">Recruitment Scam</a>
+            <a href="#">Analysis History</a>
+            <a href="#">About Research</a>
+          </nav>
+        </aside>
+        <main class="mock-main">
+          <div class="mock-topbar">
+            <h2>Fake News Detection</h2>
+            <span class="mock-user">BERT + LIME / SHAP</span>
+          </div>
+          <div class="deepfake-grid">
+            <div>
+              <div class="mock-card">
+                <h3>News Text Input</h3>
+                <div class="news-text-box">
+                  Breaking: Doctors confirm that drinking lemon water with baking soda cures all types of cancer within 48 hours. Big Pharma is hiding this miracle cure. Share immediately before they delete this post!
+                </div>
+              </div>
+              <div class="mock-card" style="margin-top:8px;">
+                <h3>Prediction Result</h3>
+                <div class="result-big" style="color:var(--danger);font-size:1.4rem;">FAKE NEWS</div>
+                <p style="font-size:0.55rem;color:var(--muted);margin:4px 0;">Confidence: <strong style="color:var(--danger);">93.25%</strong></p>
+                <div class="conf-bar-wrap">
+                  <div class="conf-bar-label"><span>Fake probability</span><span>93%</span></div>
+                  <div class="conf-bar"><div class="conf-bar-fill" style="width:93%;background:var(--danger);"></div></div>
+                </div>
+                <div class="mock-btns">
+                  <button class="btn btn-primary">Download Report (PDF)</button>
+                  <button class="btn btn-outline">New Analysis</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mock-card">
+                <h3>LIME — Top Word Explanations</h3>
+                <div class="lime-bars">
+                  <div class="lime-row">
+                    <span>cures</span>
+                    <div class="lime-bar-bg"><div class="lime-bar-fill" style="width:92%"></div></div>
+                    <span>+0.31</span>
+                  </div>
+                  <div class="lime-row">
+                    <span>miracle</span>
+                    <div class="lime-bar-bg"><div class="lime-bar-fill" style="width:78%"></div></div>
+                    <span>+0.24</span>
+                  </div>
+                  <div class="lime-row">
+                    <span>Big Pharma</span>
+                    <div class="lime-bar-bg"><div class="lime-bar-fill" style="width:65%"></div></div>
+                    <span>+0.19</span>
+                  </div>
+                  <div class="lime-row">
+                    <span>Share immediately</span>
+                    <div class="lime-bar-bg"><div class="lime-bar-fill low" style="width:52%"></div></div>
+                    <span>+0.14</span>
+                  </div>
+                  <div class="lime-row">
+                    <span>48 hours</span>
+                    <div class="lime-bar-bg"><div class="lime-bar-fill low" style="width:40%"></div></div>
+                    <span>+0.11</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-card" style="margin-top:8px;">
+                <h3>Model Info</h3>
+                <table class="forensics-table">
+                  <tr><td>Model</td><td>bert-base-cased-fake-news</td></tr>
+                  <tr><td>Architecture</td><td>BERT (HuggingFace)</td></tr>
+                  <tr><td>Tokens processed</td><td>42</td></tr>
+                  <tr><td>Backend</td><td>HuggingFace Transformers</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PAGE 4: RECRUITMENT SCAM -->
+    <p class="slide-label">Page 4 — Recruitment Scam Detection</p>
+    <section class="slide" id="slide-4">
+      <div class="mock-app">
+        <aside class="mock-sidebar">
+          <div class="mock-sidebar-brand">
+            <h2>XAI-Verify</h2>
+            <p>Explainable AI for DeepFake &amp; Misinformation Detection</p>
+          </div>
+          <nav class="mock-nav">
+            <a href="#">Dashboard</a>
+            <a href="#">DeepFake Detection</a>
+            <a href="#" class="active">Misinformation Detection</a>
+            <a href="#" class="sub">Fake News</a>
+            <a href="#" class="sub active">Recruitment Scam</a>
+            <a href="#">Analysis History</a>
+            <a href="#">About Research</a>
+          </nav>
+        </aside>
+        <main class="mock-main">
+          <div class="mock-topbar">
+            <h2>Recruitment Scam Detection</h2>
+            <span class="mock-user">Rule-Based Risk Engine</span>
+          </div>
+          <div class="recruit-grid">
+            <div>
+              <div class="mock-card">
+                <h3>Job Post Input</h3>
+                <div class="form-field">
+                  <label>Job Description</label>
+                  <div class="value">Urgent hiring! Work from home and earn ₹50,000/week. Pay registration fee ₹999 to apply. Limited seats — WhatsApp us now for instant joining without interview.</div>
+                </div>
+                <div class="form-field">
+                  <label>Company Name</label>
+                  <div class="value">ABC Solutions Pvt Ltd</div>
+                </div>
+                <div class="form-field">
+                  <label>Company Website</label>
+                  <div class="value">https://abc-jobs.xyz/apply</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mock-card">
+                <h3>Prediction Result</h3>
+                <div class="result-big" style="color:var(--warning);font-size:1.4rem;">SCAM</div>
+                <p style="font-size:0.55rem;color:var(--muted);">Trust Score</p>
+                <div class="trust-score">23<span style="font-size:0.9rem;color:var(--muted);">/100</span></div>
+                <p style="font-size:0.5rem;color:var(--danger);margin-top:4px;">Fraud risk score: 77%</p>
+                <div class="mock-btns">
+                  <button class="btn btn-primary">Download Report (PDF)</button>
+                  <button class="btn btn-outline">New Analysis</button>
+                </div>
+              </div>
+              <div class="mock-card" style="margin-top:8px;">
+                <h3>Risk Indicators Detected</h3>
+                <ul class="risk-list">
+                  <li>Demands payment (registration fee ₹999)</li>
+                  <li>Too-good-to-be-true salary promise</li>
+                  <li>Suspicious domain (.xyz TLD)</li>
+                  <li>Urgency / limited seats language</li>
+                  <li>Employer not in reference whitelist</li>
+                  <li class="ok">WhatsApp-only contact pattern</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

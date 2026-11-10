@@ -1,0 +1,29 @@
+{% if result.model_label %}
+<div class="model-info mb-4">
+  <p class="text-sm"><strong>Model:</strong> {{ result.model_label }}</p>
+  {% if result.model_description %}
+  <p class="text-sm muted">{{ result.model_description }}</p>
+  {% endif %}
+  <p class="text-sm muted"><strong>Prediction confidence:</strong> {{ result.confidence|floatformat:1 }}% (this analysis only)</p>
+  {% if result.model_val_accuracy %}
+  <p class="text-sm muted">
+    Model validation accuracy (training): {{ result.model_val_accuracy|floatformat:1 }}%
+    {% if result.demo_training_data %}
+    — trained on synthetic demo images; 100% is expected and not real-world accuracy.
+    {% endif %}
+  </p>
+  {% endif %}
+  <p class="text-sm muted">Backend: {{ result.inference_backend }}</p>
+  {% if result.inference_backend == "rule_fallback" or result.inference_backend == "rule_forensics" %}
+  <p class="text-sm" style="margin-top:0.75rem;padding:0.65rem 0.85rem;border-radius:8px;background:rgba(239,68,68,0.12);color:#991b1b;">
+    <strong>Not using ML:</strong> results are keyword heuristics only. Run <code>python manage.py train_fake_news</code> or choose BERT/RoBERTa with transformers installed.
+  </p>
+  {% endif %}
+  {% if result.reliability == "low" %}
+  <p class="text-sm" style="margin-top:0.75rem;padding:0.65rem 0.85rem;border-radius:8px;background:rgba(234,179,8,0.15);color:#854d0e;">
+    <strong>Low reliability:</strong> input is very short. Prefer the default TF-IDF model on full articles;
+    compare multiple models only on longer text.
+  </p>
+  {% endif %}
+</div>
+{% endif %}

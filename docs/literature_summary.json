@@ -1,0 +1,846 @@
+[
+  {
+    "ref": 1,
+    "title": "An AI-driven conceptual framework for detecting fake news and deepfake content - a systematic review",
+    "domain": "Fake News",
+    "techniques": [
+      "EfficientNet",
+      "Grad-CAM",
+      "BERT",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "Transformer",
+      "GAN",
+      "Vision Transformer"
+    ],
+    "abstract": "",
+    "metrics": {
+      "auc": "1"
+    },
+    "pages": 10
+  },
+  {
+    "ref": 2,
+    "title": "A hybrid deep learning framework for fake news detection using LSTM-CGPNN and metaheuristic optimization",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "Xception",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "95",
+      "precision": "95.5"
+    },
+    "pages": 20
+  },
+  {
+    "ref": 3,
+    "title": "A hybrid spatial–frequency attention-based algorithm using efficientnet for robust and interpretable deepfake detection",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNet",
+      "Grad-CAM",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "",
+    "metrics": {
+      "auc": "0.997"
+    },
+    "pages": 18
+  },
+  {
+    "ref": 4,
+    "title": "Addressing data scarcity in multilingual fake news detection -  an LLM-based dataset augmentation approach",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "Xception",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "The rise in online news consumption, especially during critical events, coupled with rapid advances in generative artificial intelligence (AI), has accelerated the spread of misinformation, underscoring the urgent need for fast and effective fake news detection approaches. However, the scarcity and imbalance of high-quality labeled datasets pose significant challenges to training accurate and reliable detection models. In this study, we tackle this issue by leveraging Large Language Models (LLMs) for data augmentation. Expanding upon our prior work, we employ Llama 3 to generate synthetic news samples under zero-shot and few-shot settings, enriching existing fake news datasets to improve the performance of detection models. To optimize augmentation effectiveness, we explore several strategies, including varying augmentation rates, random versus similarity-based subsampling, and class-spe",
+    "metrics": {
+      "f1": "7.7"
+    },
+    "pages": 16
+  },
+  {
+    "ref": 5,
+    "title": "An enhanced deep learning framework for DeepFake detection using EfficientNet-B3 comparative evaluation of deep and machine learning techniques",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNet",
+      "Xception",
+      "CNN",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "Random Forest"
+    ],
+    "abstract": "Over the last few years, spread of DeepFake content has become major issue on digital platforms, calling for strong detection systems. This research investigates and compares the performance of machine learning (ML) techniques and the deep learning (DL) techniques for DeepFake image categorization. The ML technologies like SVM, Random Forest, and ensemble models were utilized based on hand-designed features like GLCM and HOG, whereas DL techniques utilized strong architectures like EfficientNet-B3 and InceptionV3. The research also investigates effect of datasets of different size on model’s performance in order to analyze scalability and generalization better. Experimental findings exhibit the higher performance of DL models in accuracy, with EfficientNet-B3 obtaining the highest value of 97.95%, while ML models provided computational efficiency and interpretability. This work adds a co",
+    "metrics": {
+      "accuracy": "96.5",
+      "f1": "8",
+      "auc": "9"
+    },
+    "pages": 23
+  },
+  {
+    "ref": 6,
+    "title": "An ensemble of CNNs with self-attention mechanism for DeepFake video detection",
+    "domain": "DeepFake",
+    "techniques": [
+      "Xception",
+      "ResNet",
+      "CNN",
+      "Transformer",
+      "GAN",
+      "Vision Transformer",
+      "SVM"
+    ],
+    "abstract": "The availability of large-scale facial datasets with the rapid progress of deep learning techniques, such as Generative Adversarial Networks, has enabled anyone to create realistic fake videos. These fake videos can potentially become harmful when used for fake news, hoaxes, and identity fraud. We propose a deep learning bagging ensemble classiﬁer to detect manipulated faces in videos. The proposed bagging classiﬁer uses the convolution and self-attention network (CoAtNet) model as a base learner. CoAtNet model is vertically stacking depthwise convolution layers and self-attention layers in such a way that generalization, capacity, and efﬁciency are improved. Depthwise convolution captures local features from faces extracted from video then pass these features to the attention layers to extract global information and efﬁciently capture long-range dependencies of spatial details. Each lea",
+    "metrics": {
+      "auc": "9"
+    },
+    "pages": 17
+  },
+  {
+    "ref": 7,
+    "title": "Building an efficient Deep Fake detection system using the recognition capabilities of convolutional neural networks and transformers",
+    "domain": "DeepFake",
+    "techniques": [
+      "Xception",
+      "CNN",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "Deepfake technology is growing more and more hazardous because it makes it easier to create incredibly realistic digital content that distorts reality and spreads fabricated data. Deepfake detection is still an exceptionally challenging endeavor, and cutting-edge studies are needed to improve the precision and reliability of these detection methods. In existing CNN-based Deep Fake detection tasks, CNN may fail to detect the most realistic deep fake images, since CNN is constrained by their reliance on convolutions that focus on local neighborhoods. Usually, the transformers can detect global and local features in images, unlike CNN, whose self-attention mechanism can detect subtle discrepancies in presentation typical of deepfake manipulation, improving overall detection accuracy. As a result, a transformer variant, CSWin transformer is utilized in this research to detect deepfake images",
+    "metrics": {
+      "f1": "9"
+    },
+    "pages": 17
+  },
+  {
+    "ref": 8,
+    "title": "DeepDect -  an explainable AI platform for face swapping and face generation DeepFake detection",
+    "domain": "DeepFake",
+    "techniques": [
+      "Grad-CAM",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "GAN",
+      "Vision Transformer",
+      "Random Forest"
+    ],
+    "abstract": "The rapid advancement of Deep Learning (DL) techniques has led to the widespread pro­ liferation of DeepFake (DF) images, raising real-world concerns. In this work, DeepDect is proposed and evaluated in a real-world scenario. The platform has been developed using a human-centered approach, integrating insights (requirements) from both common and DF expert users. The platform can detect both face-swapping and generated deepfake fac­ es, which are the most common cases of DF in the current context. Two benchmarks have been conducted to evaluate state-of-the-art DF detection models for face-swap and AI- generated images. The best-performing models (ResNet-50 and Random Forest for face- swapping detection, Capsule Forensics v2, and CNN for AI-generated images) have been integrated into the platform as the detection engine. An Explainable AI (XAI) module has been implemented and integrated in",
+    "metrics": {},
+    "pages": 36
+  },
+  {
+    "ref": 9,
+    "title": "Deepfake detection - critical review of state-of-the-art approaches and future perspectives",
+    "domain": "DeepFake",
+    "techniques": [
+      "GAN"
+    ],
+    "abstract": "In recent years, the advancement of technology, particularly in domains such as AI, machine learning, and deep learning, has fostered the development of novel tools for altering visual media, including images, audios, and videos. Among these tools, deepfakes have emerged as a prominent example, leveraging generative adversarial networks to autonomously create deceptive visual content. The proliferation of deepfake technology has raised significant concerns due to its potential for misuse, such as in elections and social media platforms. This review provides an in-depth exploration of deepfakes, including their generation process, various detection methodologies, and established performance benchmarks. We examine primary methods employed to manipulate facial features within deepfake content, encompassing complete facial synthesis, identity swapping, attribute alteration, and expression su",
+    "metrics": {},
+    "pages": 32
+  },
+  {
+    "ref": 10,
+    "title": "DeepFake Detection in Images and Videos - A Survey on Models, Datasets, and Evaluation Metrics",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNetB0",
+      "EfficientNet",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "GAN",
+      "Vision Transformer",
+      "SVM"
+    ],
+    "abstract": "DeepFake technology transforms digital media, blurring the gap between real and manipu­ lation. With an increase in its misuse, the necessity for efficient detection has grown to new heights. Despite comprehensive research, a systematic comparison of DeepFake detec­ tion models is lacking, complicating the task for researchers to identify the most effective methods. This survey addresses the gap by systematically classifying detection models into CNN, GAN-based, transformer-based, and hybrid approaches, providing a clear comparison of their strengths and limitations. Also, it examines the advancement of these models, evalu­ ating significant advancements that have influenced their development over time, as re­ flected in several deep learning models, which achieves an AUC of 99.80% on the CelebDF dataset, and an accuracy of 97.82% on the FaceForensics++ dataset. It also provides insights",
+    "metrics": {
+      "accuracy": "97.82",
+      "f1": "0.976",
+      "auc": "9",
+      "precision": "91.03"
+    },
+    "pages": 40
+  },
+  {
+    "ref": 11,
+    "title": "Deepfake detection using convolutional vision transformers and convolutional neural networks",
+    "domain": "DeepFake",
+    "techniques": [
+      "Xception",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "Deepfake technology has rapidly advanced in recent years, creating highly realistic fake videos that can be difﬁcult to distinguish from real ones. The rise of social media platforms and online forums has exacerbated the challenges of detecting misinformation and malicious content. This study leverages many papers on artiﬁcial intelligence techniques to address deepfake detection. This research proposes a deep learning (DL)-based method for detecting deepfakes. The system comprises three components: preprocessing, detection, and prediction. Preprocessing includes frame extraction, face detection, alignment, and feature cropping. Convolutional neural networks (CNNs) are employed in the eye and nose feature detection phase. A CNN combined with a vision transformer is also used for face detection. The prediction component employs a majority voting approach, merging results from the three mo",
+    "metrics": {
+      "accuracy": "97"
+    },
+    "pages": 17
+  },
+  {
+    "ref": 12,
+    "title": "DeepFeatureX-SN Generalization of deepfake detection via contrastive learning",
+    "domain": "DeepFake",
+    "techniques": [
+      "ResNet",
+      "CNN",
+      "GAN"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "97.29"
+    },
+    "pages": 20
+  },
+  {
+    "ref": 13,
+    "title": "Enhancing deepfake detection with Adaptive-DCGAN and Lite-CNN  a novel approach to image classification",
+    "domain": "DeepFake",
+    "techniques": [
+      "ResNet",
+      "CNN",
+      "GAN"
+    ],
+    "abstract": "The rapid advancement of digital content generation technologies has led to the proliferation of deepfake media, posing significant security and privacy risks on social networks. Conventional deepfake detection methods struggle with accuracy, computational efficiency, and adaptability to evolving fake image generation techniques. To address these challenges, we propose a novel deepfake detection framework that integrates an Adaptive deep convolutional generative adversarial network (Adaptive-DCGAN) with a lightweight convolutional neural network (Lite- CNN). The Adaptive-DCGAN generates high-quality synthetic images, enhancing the training dataset, while the Lite-CNN efficiently classifies real and fake images with minimal computational overhead. Experimental results demonstrate that the proposed model achieves 95% accuracy, significantly outperforming existing GAN- CNN-based detection s",
+    "metrics": {
+      "accuracy": "95"
+    },
+    "pages": 21
+  },
+  {
+    "ref": 14,
+    "title": "Explainable AI for DeepFake Detection",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNet",
+      "Grad-CAM",
+      "LIME",
+      "SHAP",
+      "ResNet",
+      "CNN",
+      "GAN",
+      "Vision Transformer"
+    ],
+    "abstract": ": The surge in technological advancements has resulted in concerns over its misuse in politics and entertainment, making reliable detection methods essential. This study introduces a deepfake detection technique that enhances interpretability using the net- work dissection algorithm. This research consists of two stages: (1) detection of forged images using advanced convolutional neural networks such as ResNet-50, Inception V3, and VGG-16, and (2) applying the network dissection algorithm to understand the mod- els’ internal decision-making processes. The CNNs’ performance is evaluated through F1-scores ranging from 0.8 to 0.9, demonstrating their effectiveness. By analyzing the facial features learned by the models, this study provides explainable results for classifying images as real or fake. This interpretability is crucial in understanding how deepfake detection models operate. Alth",
+    "metrics": {
+      "f1": "0.8"
+    },
+    "pages": 21
+  },
+  {
+    "ref": 15,
+    "title": "Explainable deepfake detection across different modalities  An overview of methods and challenges",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNet",
+      "Grad-CAM",
+      "LIME",
+      "SHAP",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "GAN",
+      "Vision Transformer",
+      "SVM",
+      "BiLSTM"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "98.7",
+      "f1": "0.9986",
+      "auc": "0.99973",
+      "precision": "90",
+      "recall": "93"
+    },
+    "pages": 16
+  },
+  {
+    "ref": 16,
+    "title": "Generative AI for multimodal content - a survey with empirical and experimental evaluations",
+    "domain": "DeepFake",
+    "techniques": [
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "Generative Artificial Intelligence (AI) has emerged as a transformative force, capable of synthesizing high-quality, coherent, and semantically rich multimodal content across text, vision, audio, video, and 3D/XR environments. Despite the explosive growth of research, existing surveys remain fragmented: they often focus narrowly on a single modality, pro­ vide only qualitative or scattered evaluations, and lack a unified taxonomy that system­ atically organizes techniques. More critically, most reviews neither aggregate empirical results from the literature nor contribute experimental validations, leaving readers without objective benchmarks for comparison. This survey fills these gaps by introducing a hierar­ chical taxonomy that unifies generative families and multimodal applications into a struc­ tured roadmap. We provide a dual-layered evaluation, combining (1) empirical analysis, wh",
+    "metrics": {},
+    "pages": 103
+  },
+  {
+    "ref": 17,
+    "title": "Hybrid CNN-based detection of forged facial",
+    "domain": "DeepFake",
+    "techniques": [
+      "ResNet",
+      "CNN",
+      "GAN"
+    ],
+    "abstract": "This study proposes a hybrid deep learning framework for detecting face morphing and swapping attacks using texture descriptors and advanced CNN classifiers. The process begins with the Viola-Jones Haar cascade, a widely used face detection method that effectively identifies and isolates facial regions. Subsequently, Local Binary Patterns (LBP) and Gabor filters are applied to extract texture-based features from these facial regions. Finally, the classification stage employs Simple Convolutional Neural Networks (CNN), Custom CNN and ResNet-152 to effectively distinguish between authentic and tampered images. We integrate LBP and Gabor filters to extract robust texture features and classify them using a combination of Simple CNN, Custom CNN, and ResNet-152. Our approach achieves an ACER of 2.82% on the DEFACTO dataset, outperforming several state-of-the-art methods. Additionally, the pape",
+    "metrics": {},
+    "pages": 17
+  },
+  {
+    "ref": 18,
+    "title": "ID-insensitive deepfake detection model based on multi-attention mechanism",
+    "domain": "DeepFake",
+    "techniques": [
+      "EfficientNet",
+      "Xception",
+      "GAN",
+      "Vision Transformer"
+    ],
+    "abstract": "",
+    "metrics": {},
+    "pages": 16
+  },
+  {
+    "ref": 19,
+    "title": "Mf-net - multi-feature fusion network based on two-stream extraction and multi-scale enhancement for face forgery detection",
+    "domain": "DeepFake",
+    "techniques": [
+      "CNN",
+      "GAN"
+    ],
+    "abstract": "Due to the increasing sophistication of face forgery techniques, the images generated are becoming more and more realistic and difﬁcult for human eyes to distinguish. These face forgery techniques can cause problems such as fraud and social engineering attacks in facial recognition and identity veriﬁcation areas. Therefore, researchers have worked on face forgery detectionstudiesandhavemadesigniﬁcantprogress.Currentfaceforgerydetectionalgorithmsachievehighdetectionaccuracy within-dataset. However, it is difﬁcult to achieve satisfactory generalization performance in cross-dataset scenarios. In order to improve the cross-dataset detection performance of the model, this paper proposes a multi-feature fusion network based on two-stream extraction and multi-scale enhancement. First, we design a two-stream feature extraction module to obtain richer feature information. Secondly, the multi-scal",
+    "metrics": {
+      "auc": "9"
+    },
+    "pages": 15
+  },
+  {
+    "ref": 20,
+    "title": "Robust face forgery detection integrating local texture and global texture information",
+    "domain": "DeepFake",
+    "techniques": [
+      "CNN",
+      "Transformer",
+      "GAN",
+      "Vision Transformer"
+    ],
+    "abstract": "Facial forgery technology is advancing rapidly, leading to significant social security concerns. In recent years, as for- gery technologies and types continue to emerge, many methods struggle to strike a balance between accuracy and robustness. Most existing methods rely on CNN to extract high-quality forged face clues but often overlook inherent forgery traces. Consequently, they may overfit the training dataset and perform poorly on data from diverse sources or be subjected to various post-processing operations. To address this challenge, we propose leveraging multi-scale texture information to expose subtle artifacts in RGB space. To achieve this, we devise a two-stream detection architecture that integrates texture features and RGB features. We analyze forgery traces using global large texture information and local detailed texture information separately. Additionally, we design a fe",
+    "metrics": {},
+    "pages": 14
+  },
+  {
+    "ref": 21,
+    "title": "The Creation and Detection of Deepfakes - A Survey",
+    "domain": "DeepFake",
+    "techniques": [
+      "CNN",
+      "LSTM",
+      "GAN"
+    ],
+    "abstract": "ing with credit is permited. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior speciﬁc permission and/or a fee. Request permissions from permissions@acm.org. © 2020 ACM. 0360-0300/2020/1-ART1 $15.00 DOI: XX.XXXX/XXXXXXX.XXXXXXX ACM Computing Surveys, Vol. 1, No. 1, Article 1. Publication date: January 2020. arXiv:2004.11138v3 [cs.CV] 13 Sep 2020 1:2 Mirsky, et al. III. Entertainment",
+    "metrics": {},
+    "pages": 38
+  },
+  {
+    "ref": 22,
+    "title": "Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection (2024)",
+    "domain": "DeepFake",
+    "techniques": [],
+    "abstract": "",
+    "metrics": {},
+    "pages": 9
+  },
+  {
+    "ref": 23,
+    "title": "Transparent AI for mathematics -  transformer-based large language models for mathematical entity relationship extraction with XAI",
+    "domain": "DeepFake",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "LIME",
+      "SHAP",
+      "Xception",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "Random Forest",
+      "BiLSTM",
+      "ELECTRA"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "99.39",
+      "f1": "1",
+      "precision": "100",
+      "recall": "100"
+    },
+    "pages": 16
+  },
+  {
+    "ref": 24,
+    "title": "Unmasking deepfakes - A systematic review of deepfake detection and",
+    "domain": "DeepFake",
+    "techniques": [
+      "GAN",
+      "Vision Transformer"
+    ],
+    "abstract": "",
+    "metrics": {},
+    "pages": 38
+  },
+  {
+    "ref": 25,
+    "title": "A comprehensive survey on machine learning approaches for fake news detection",
+    "domain": "Fake News",
+    "techniques": [
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "The proliferation of fake news on social media platforms poses signiﬁcant challenges to society and individuals, leading to negative impacts. As the tactics employed by purveyors of fake news continue to evolve, there is an urgent need for automatic fake news detection (FND) to mitigate its adverse social consequences. Machine learning (ML) and deep learning (DL) techniques have emerged as promising approaches for characterising and identifying fake news content. This paper presents an extensive review of previous studies aiming to understand and combat the dissemination of fake news. The review begins by exploring the deﬁnitions of fake news proposed in the literature and delves into related terms and psychological and scientiﬁc theories that shed light on why people believe and disseminate fake news. Subsequently, advanced ML and DL techniques for FND are dicussed in detail, focusing o",
+    "metrics": {},
+    "pages": 59
+  },
+  {
+    "ref": 26,
+    "title": "A reasoning based explainable multimodal fake news detection for low resource language using large language models and transformers",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "Nowadays, individuals rely predominantly on online social media platforms, news feeds, websites, and news aggregator applications to acquire recent news stories. This trend has resulted in an increase in the number of available social media platforms, online news feeds, and news aggregator applications. These news platforms have been accused of spreading fake news to gain more attention and recognition. Earlier, this misinformation or fake news used to be propagated only in the text form. However, with the advent of technology, now it is spread in multimodal forms, such as images with text, videos, and audio with textual content. Currently, the automatic fake news detection models are focused on high resource languages and superficial output. Social media users need clarity and reasoning when it comes to identifying fake news, rather than just a superficial classification of news as fake",
+    "metrics": {
+      "f1": "0.8736"
+    },
+    "pages": 29
+  },
+  {
+    "ref": 27,
+    "title": "A Review of Automatic Fake News Detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "SVM",
+      "Random Forest",
+      "TF-IDF"
+    ],
+    "abstract": "In the current digital era, the spread of fake news presents serious difficulties. This study offers a thorough analysis of recent developments in false news automatic detection tech- niques, from traditional methods to the most recent developed models like large language models. The review identifies four perspectives on automatic detection of fake news that are oriented towards knowledge, style, propagation, and source of the misinformation. This paper describes how automatic detection methods use data science techniques such as deep learning, large language models, and traditional machine learning. In addition to discussing the shortcomings of existing approaches, such as the absence of datasets, this paper empha- sizes the multidimensional function of large language models in creating and identifying fake news while underlining the necessity for textual, visual, and audio common anal",
+    "metrics": {
+      "accuracy": "65",
+      "auc": "0.9394",
+      "precision": "90"
+    },
+    "pages": 29
+  },
+  {
+    "ref": 28,
+    "title": "A Review of Deep Learning-based Approaches for Deepfake Content Detection",
+    "domain": "Fake News",
+    "techniques": [
+      "LSTM",
+      "Transformer",
+      "GAN",
+      "Vision Transformer",
+      "SVM"
+    ],
+    "abstract": "Recent advancements in deep learning generative models have raised con- cerns as they can create highly convincing counterfeit images and videos. This poses a threat to people’s integrity and can lead to social instability. To address this issue, there is a pressing need to develop new computational models that can efficiently detect forged content and alert users to potential image and video manipulations. This paper presents a comprehensive review of recent studies for deepfake content detection using deep learning-based approaches. We aim to broaden the state-of-the-art research by systematically reviewing the differ- ent categories of fake content detection. Furthermore, we report the advantages and drawbacks of the examined works, and prescribe several future directions towards the issues and shortcomings still unsolved on deepfake detection.",
+    "metrics": {},
+    "pages": 84
+  },
+  {
+    "ref": 29,
+    "title": "A simple contrastive embedding framework for low-resource fake news detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "LSTM",
+      "Transformer"
+    ],
+    "abstract": "Low-resource fake news detection aims at discerning between true and false claims from low-resource languages with scarce benchmark datasets. In this resource-constrained scenario, fake news data collected from online hoax reporting system is inherently skewed because human fact checkers mainly sample claims that are more likely to be fake or false. Instead of training end-to-end classiﬁer on the extremely imbalanced dataset, our study inves- tigates a simple framework based on contrastive learning and stacking-based ensemble learning as an alternate fake news classiﬁcation pipeline for Indonesian language. Our empirical result shows that by combining con- trastive-based embedding model—Contrast-BERT and ensemble of multilayer perceptrons (MLPs) in inference stage, we improve the precision score in fake news classiﬁcation up to 26.64%, while maintaining accuracy and recall scores of abov",
+    "metrics": {
+      "accuracy": "75",
+      "recall": "75"
+    },
+    "pages": 27
+  },
+  {
+    "ref": 30,
+    "title": "AI Based LSTM-BERT Model for False News Detection",
+    "domain": "Fake News",
+    "techniques": [],
+    "abstract": "",
+    "metrics": {},
+    "pages": 363
+  },
+  {
+    "ref": 31,
+    "title": "BiLSTM-LIME integrating NLP and advanced machine learning models for fake news detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "LIME",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "ELECTRA",
+      "TF-IDF"
+    ],
+    "abstract": "The proliferation of fake news on digital platforms poses a growing threat to democratic integrity, public trust, and social stability. Addressing the limitations of existing detection models, particularly their opacity and computational overhead, this study proposes BiLSTM-LIME, a hybrid framework integrating Bidirectional Long Short-Term Memory (BiLSTM) networks with Local Interpretable Model Agnostic Explanations (LIME) for interpretable and efficient fake news detection. The model employs pre-trained GloVe embeddings to capture semantic and syntactic dependencies, while LIME provides token level explainability, enhancing transparency in model decisions. A standardized English corpus with a refined preprocessing pipeline was developed to ensure robust and reproducible evaluation. Experimental results demonstrate that the proposed BiLSTM-LIME model achieves 97.21% accuracy and an F1 sc",
+    "metrics": {
+      "f1": "0.97"
+    },
+    "pages": 22
+  },
+  {
+    "ref": 32,
+    "title": "Dual stream graph augmented transformer model integrating BERT and GNNs for context aware fake news detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "LIME",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "99",
+      "f1": "9",
+      "auc": "0.985"
+    },
+    "pages": 25
+  },
+  {
+    "ref": 33,
+    "title": "Ensemble based high performance deep learning models for fake news detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "ELECTRA",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "96.73"
+    },
+    "pages": 24
+  },
+  {
+    "ref": 34,
+    "title": "Explainable AI for online disinformation detection - Insights from a design science research project",
+    "domain": "Fake News",
+    "techniques": [
+      "Grad-CAM",
+      "LIME",
+      "SHAP",
+      "Vision Transformer"
+    ],
+    "abstract": "The pervasive threat of online disinformation challenges the integrity of the digital public sphere and the resilience of liberal democracies. This study conceptualizes and evaluates an explainable artificial intelligence (XAI) artifact specifi- cally designed for disinformation detection, integrating confidence scores, visual explanations, and detailed insights into potentially misleading content. Based on a systematic empirical literature review, we establish theoretically informed design principles to guide responsible XAI development. Using a mixed-method approach, including qualitative user testing and a large-scale online study (n = 344), we reveal nuanced findings: while explainability features did not inherently enhance trust or usability, they sometimes introduced uncertainty and reduced classification agreement. Demographic insights highlight the pivotal role of age and trust p",
+    "metrics": {},
+    "pages": 28
+  },
+  {
+    "ref": 35,
+    "title": "Exploring Machine Learning for Fake News Detection",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "Xception",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "BiLSTM"
+    ],
+    "abstract": "Social media usage has reached its peak across all age groups, resulting in vast quantities of data being generated daily, some internet users disseminate fake information for their own benefit. Manually checking each user profile is time- consuming, necessitating automated solutions. This paper addresses multimodal fake news detection, examining evolving landscape of fake information on social media. It highlights the limitations of techniques that rely on single modality. This review underscores the necessity of automated systems capable of detecting and monitoring fake information in multimodal content on social media platforms. The variety of multimodal datasets, tools, and machine learning techniques used to determine the authenticity and virality of online social media content. The research outlines standard performance indicators to evaluate content, aiming to enhance the accuracy",
+    "metrics": {
+      "accuracy": "82.3",
+      "auc": "0.86"
+    },
+    "pages": 19
+  },
+  {
+    "ref": 36,
+    "title": "Fake News Detection Using Machine Learning and Deep Learning Algorithms - A Comprehensive Review",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "Currently, with significant developments in technology and social networks, people gain rapid access to news without focusing on its reliability. Consequently, the proportion of fake news has increased. Fake news is a significant problem that hinders societies today, as it negatively impacts many aspects, including politics, the economy, and society. Fake news is widely disseminated via social media through modern digital platforms. In this paper, we focus on conducting a comprehensive review on fake news detection using machine learning and deep learning. Additionally, this review provides a brief survey and evaluation, as well as a discussion of gaps, and explores future perspectives. Through this research, this review addresses various research questions. This review also focuses on the importance of machine learning and deep learning for fake news detection, by providing a comparison",
+    "metrics": {
+      "accuracy": "96",
+      "f1": "6"
+    },
+    "pages": 40
+  },
+  {
+    "ref": 37,
+    "title": "Graph-augmented transformer ensemble framework for robust and scalable fake news detection in social media ecosystems",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "96.5",
+      "f1": "9",
+      "auc": "9"
+    },
+    "pages": 31
+  },
+  {
+    "ref": 38,
+    "title": "Hybrid optimization driven fake news detection using reinforced transformer models",
+    "domain": "Fake News",
+    "techniques": [
+      "EfficientNet",
+      "BERT",
+      "RoBERTa",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "SVM"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "10.15",
+      "f1": "0.99"
+    },
+    "pages": 16
+  },
+  {
+    "ref": 39,
+    "title": "Multi-modal fake news detection- A comprehensive survey on deep learning technology, advances, and challenges",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "ResNet",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer"
+    ],
+    "abstract": "The rapid development of social media and networks has dramatically accelerated the spread of multimodal fake news, posing significant threats to social stability, the public's right to information, and the credibility of news organizations. News modalities have advanced from simple text or images to combined video and audio formats. Integrating these heterogeneous data streams poses greater challenges for fake news detection. In recent years, the rapid advancement of Artificial Intelligence (AI) technology, including Large Language Models (LLMs), social network analysis, and external knowledge integration, has provided new insights and methods for detecting fake news. Nevertheless, there is a clear need for a thorough survey of multi-modal fake news detection. To address this, we have undertaken a comprehensive review to complement and consolidate existing research over the past five ye",
+    "metrics": {},
+    "pages": 29
+  },
+  {
+    "ref": 40,
+    "title": "Multimodal based Amharic fake news detection using CNN and attention-based BiLSTM",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "CNN",
+      "LSTM",
+      "GAN",
+      "Vision Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {
+      "accuracy": "98",
+      "f1": "9",
+      "precision": "99.67"
+    },
+    "pages": 21
+  },
+  {
+    "ref": 41,
+    "title": "Multimodal graph contrastive learning for fake news video detection",
+    "domain": "Fake News",
+    "techniques": [
+      "RoBERTa",
+      "CNN",
+      "Transformer",
+      "Vision Transformer",
+      "TF-IDF"
+    ],
+    "abstract": "As online video news gains more popularity for information acquisition, the presence of fake news video poses a new threat to users seeking the real news. Though previous studies have made much progress in detection fake news in text and image formats, video-formed fake news brings new and unique challenges: 1) the modality heterogeneity of fake news video, 2) the inherent data non-alignment of different modalities. However, existing methods simply fuse the multimodal feature at the decision layer or feature layer, and fail to explore the intrinsic complex correlations between different modalities. In this paper, we propose a multimodal graph contrastive learning framework which learning complex relations between different modalities for detecting fake news video. Speciﬁcally, to solve the issue of modality heterogeneity, we construct unimodal homogeneous graphs, cross-modal heterogeneou",
+    "metrics": {},
+    "pages": 15
+  },
+  {
+    "ref": 42,
+    "title": "Towards Smart Fake News Detection Through Explainable AI",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "CNN",
+      "LSTM"
+    ],
+    "abstract": ". People now see social media sites as their sole source of information due to their popularity. The Majority of people get their news through social media. At the same time, fake news has grown ex- ponentially on social media platforms in recent years. Several artiﬁcial intelligence-based solutions for detecting fake news have shown promis- ing results. On the other hand, these detection systems lack explanation capabilities, i.e., the ability to explain why they made a prediction. This paper highlights the current state of the art in explainable fake news de- tection. We discuss the pitfalls in the current explainable AI-based fake news detection models and present our ongoing research on multi-modal explainable fake news detection model.",
+    "metrics": {
+      "accuracy": "90"
+    },
+    "pages": 7
+  },
+  {
+    "ref": 43,
+    "title": "Transfer learning driven fake news detection and classification using large language models",
+    "domain": "Fake News",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "ResNet",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "Vision Transformer",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "",
+    "metrics": {},
+    "pages": 17
+  },
+  {
+    "ref": 44,
+    "title": "A machine learning approach to detecting fraudulent job types",
+    "domain": "Recruitment Scam",
+    "techniques": [
+      "LIME",
+      "Xception",
+      "Transformer",
+      "Vision Transformer",
+      "SVM",
+      "Random Forest",
+      "TF-IDF"
+    ],
+    "abstract": "Job seekers find themselves increasingly duped and misled by fraudulent job advertisements, posing a threat to their privacy, security and well-being. There is a clear need for solutions that can protect innocent job seekers. Existing approaches to detecting fraudulent jobs do not scale well, function like a black-box, and lack interpretability, which is essential to guide applicants’ decision-making. Moreover, commonly used lexical features may be insufficient as the representation does not capture contextual semantics of the underlying document. Hence, this paper explores to what extent different categoriza- tions of fraudulent jobs can be classified. In addition, this paper seeks to find what type of features are most relevant in classifying the type of fraudulent job. In this paper, we develop and validate a machine learning system for identifying identity theft, corporate identity t",
+    "metrics": {
+      "f1": "0.88"
+    },
+    "pages": 12
+  },
+  {
+    "ref": 45,
+    "title": "Analysing motivations of Ponzi victims in West Bengal, India",
+    "domain": "Recruitment Scam",
+    "techniques": [
+      "Xception",
+      "Vision Transformer"
+    ],
+    "abstract": "",
+    "metrics": {},
+    "pages": 11
+  },
+  {
+    "ref": 46,
+    "title": "Fraud-BERT - transformer based context aware online recruitment fraud detection",
+    "domain": "Recruitment Scam",
+    "techniques": [
+      "BERT",
+      "RoBERTa",
+      "CNN",
+      "LSTM",
+      "Transformer",
+      "SVM",
+      "Random Forest",
+      "BiLSTM",
+      "TF-IDF"
+    ],
+    "abstract": "Online recruitment facilitates the automatic hiring process for recruiters and provides convenience to job seekers via online job platforms. Parallelly, it has given rise to malicious use of such platforms by fraudsters who post fake jobs and steal money and personal information from innocent job seekers. It is difficult to detect fake jobs manually, as these are meticulously crafted to mimic legitimate ones. Previously, various machine learning approaches have employed Bag- of-Words (BoW) and Term Frequency-Inverse Document Frequency (TF-IDF) feature extraction methods for this task. However, these methods are non-contextual and show skewness in results due to imbalances in data distribution. This paper presents Fraud-BERT, a transformer-based contextual framework leveraging Bidirectional Encoder Representations from Transformers (BERT) via transfer learning approach and evaluates it on",
+    "metrics": {
+      "accuracy": "96.19",
+      "f1": "0.93",
+      "auc": "0.97"
+    },
+    "pages": 16
+  },
+  {
+    "ref": 47,
+    "title": "Imperfect Victims -  Comparing Chinese and Vietnamese Survivors of Forced Criminality in Southeast Asia’s Online Scam Industry",
+    "domain": "Recruitment Scam",
+    "techniques": [
+      "Xception",
+      "Vision Transformer"
+    ],
+    "abstract": "In recent years, the online scam industry has expanded rapidly across Southeast Asia, with operations shifting from dispersed setups in apartments, villas, and hotel rooms to large- scale “scam compounds” housing dozens of companies. Thousands of individuals have been deceived and trafficked into these facilities through fraudulent job offers, manipula- tion by acquaintances, or outright abduction. Yet those trafficked for forced criminality are often not recognised as victims. Because they are compelled to commit fraud, they are frequently perceived as offenders or willing participants rather than as people subjected to coercion. This paper draws on surveys, interviews, court records, and media coverage to compare Chinese and Vietnamese survivors, examining how they were recruited and what happened to them after leaving the compounds. Framing the analysis through the con- cept of the “i",
+    "metrics": {},
+    "pages": 20
+  },
+  {
+    "ref": 48,
+    "title": "Pathways of Intention - Narratives of Future Withdrawal from Cyber Fraud Among Ghanaian Youth",
+    "domain": "Recruitment Scam",
+    "techniques": [
+      "Vision Transformer"
+    ],
+    "abstract": "As cyber fraud becomes an increasingly visible feature of informal youth econo­ mies in parts of West Africa, much remains unknown about how young offend­ ers articulate aspirations for life beyond digital offending. This study explores the desistance intentions of Ghanaian youth engaged in cyber fraud, drawing on 50 in-depth interviews conducted across three major cyber fraud hotspots. Rather than focusing on proven behavioral exit, the research examines how participants narrate aspirations to desist, and how these intentions are shaped by social bonds, moral reflection, spiritual unease, and changing digital environments. Drawing on feminist criminology perspectives and digital criminology frameworks, the study reveals that expressed desistance intentions are often symbolic, conditional, and fraught with contradiction—where marriage, employment, or fatherhood serve as imagined turn­ in",
+    "metrics": {},
+    "pages": 26
+  }
+]

@@ -1,0 +1,30 @@
+{% with exp=result.explainability %}
+{% with reasons=exp.reasons|default:result.indicators %}
+{% if exp.summary and not reasons %}<p class="text-sm mb-4">{{ exp.summary }}</p>{% endif %}
+{% if exp.grad_cam %}
+<div class="mb-4">
+  <h4 class="text-sm" style="font-weight:600;color:var(--primary);">Grad-CAM heatmap (where the model looked)</h4>
+  <img src="data:image/png;base64,{{ exp.grad_cam }}" alt="Heatmap" class="heatmap-img">
+</div>
+{% endif %}
+{% if exp.lime_tokens %}
+<div class="mb-4">
+  <h4 class="text-sm" style="font-weight:600;color:var(--primary);">Words driving the decision (red = toward fake/scam, green = toward real)</h4>
+  {% for t in exp.lime_tokens %}
+  <span class="keyword-pill {% if t.direction == 'fake' %}keyword-fake{% else %}keyword-real{% endif %}">{{ t.token }}</span>
+  {% endfor %}
+</div>
+{% endif %}
+{% if exp.shap_features %}
+<div class="mb-4">
+  <h4 class="text-sm" style="font-weight:600;color:var(--primary);">Feature contributions</h4>
+  {% for s in exp.shap_features %}
+  <div class="shap-bar">{{ s.feature }} — {{ s.contribution_pct }}%</div>
+  {% endfor %}
+</div>
+{% endif %}
+{% if reasons %}
+<ul class="text-sm muted" style="padding-left:1.25rem;">{% for r in reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+{% endif %}
+{% endwith %}
+{% endwith %}

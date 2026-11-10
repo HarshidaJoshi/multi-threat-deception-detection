@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>{% block title %}XAI-Verify{% endblock %} | DeepFake &amp; Misinformation Research</title>
+  <link rel="stylesheet" href="{% static 'css/xai_verify.css' %}">
+</head>
+<body>
+  <div class="mobile-topbar glass">
+    <h1>XAI-Verify</h1>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </div>
+
+  <div class="app-shell">
+    {% include "components/sidebar.html" %}
+    <main class="main">
+      {% if demo_mode %}
+      <div class="demo-banner">
+        <strong>Demo mode</strong> — analyses are kept in your session only and are not saved to MySQL.
+      </div>
+      {% endif %}
+      <div class="page-content">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("menuToggle")?.addEventListener("click", function () {
+      document.getElementById("sidebar")?.classList.toggle("is-open");
+    });
+
+  (function () {
+    var group = document.getElementById("misinformationNavGroup");
+    var toggle = document.getElementById("misinformationNavToggle");
+    if (!group || !toggle) return;
+
+    toggle.addEventListener("click", function () {
+      var open = group.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  })();
+  </script>
+</body>
+</html>

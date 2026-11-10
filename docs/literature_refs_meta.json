@@ -1,0 +1,452 @@
+[
+  {
+    "file": "An AI-driven conceptual framework for detecting fake news and deepfake content - a systematic review",
+    "doi": "10.3389/frai.2026.1737790",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Frontiers in Artificial Intelligence"
+  },
+  {
+    "file": "A hybrid deep learning framework for fake news detection using LSTM-CGPNN and metaheuristic optimization",
+    "doi": "10.1038/s41598-025-25311-x",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "A hybrid spatial–frequency attention-based algorithm using efficientnet for robust and interpretable deepfake detection",
+    "doi": "10.1038/s41598-026-46086-9",
+    "year": "",
+    "volume": "",
+    "issue": "9",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Addressing data scarcity in multilingual fake news detection -  an LLM-based dataset augmentation approach",
+    "doi": "10.1007/s13278-025-01505-z",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Social Network Analysis and Mining"
+  },
+  {
+    "file": "An enhanced deep learning framework for DeepFake detection using EfficientNet-B3 comparative evaluation of deep and machine learning techniques",
+    "doi": "10.1007/s10791-025-09890-x",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Discover Computing"
+  },
+  {
+    "file": "An ensemble of CNNs with self-attention mechanism for DeepFake video detection",
+    "doi": "10.1007/s00521-023-09196-3",
+    "year": "2023",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "Building an efficient Deep Fake detection system using the recognition capabilities of convolutional neural networks and transformers",
+    "doi": "10.1007/s10791-025-09586-2",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Discover Computing"
+  },
+  {
+    "file": "DeepDect -  an explainable AI platform for face swapping and face generation DeepFake detection",
+    "doi": "10.1007/s11042-026-21672-1",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Multimedia Tools and Applications"
+  },
+  {
+    "file": "Deepfake detection - critical review of state-of-the-art approaches and future perspectives",
+    "doi": "10.1007/s42452-025-08174-9",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Discover Applied Sciences"
+  },
+  {
+    "file": "DeepFake Detection in Images and Videos - A Survey on Models, Datasets, and Evaluation Metrics",
+    "doi": "10.1007/s11042-026-21365-9",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Multimedia Tools and Applications"
+  },
+  {
+    "file": "Deepfake detection using convolutional vision transformers and convolutional neural networks",
+    "doi": "10.1007/s00521-024-10181-7",
+    "year": "2023",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "DeepFeatureX-SN Generalization of deepfake detection via contrastive learning",
+    "doi": "10.1007/s11042-025-21060-1",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Multimedia Tools and Applications"
+  },
+  {
+    "file": "Enhancing deepfake detection with Adaptive-DCGAN and Lite-CNN  a novel approach to image classification",
+    "doi": "10.1007/s42452-025-07690-y",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Discover Applied Sciences"
+  },
+  {
+    "file": "Explainable AI for DeepFake Detection",
+    "doi": "10.3390/app15020725",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Applied Sciences"
+  },
+  {
+    "file": "Explainable deepfake detection across different modalities  An overview of methods and challenges",
+    "doi": "10.1016/j.imavis.2025.105738",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Image and Vision Computing"
+  },
+  {
+    "file": "Generative AI for multimodal content - a survey with empirical and experimental evaluations",
+    "doi": "10.1007/s10462-026-11525-6",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Hybrid CNN-based detection of forged facial",
+    "doi": "10.1007/s10791-025-09731-x",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Discover Computing"
+  },
+  {
+    "file": "ID-insensitive deepfake detection model based on multi-attention mechanism",
+    "doi": "10.1038/s41598-025-96254-6",
+    "year": "2017",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Mf-net - multi-feature fusion network based on two-stream extraction and multi-scale enhancement for face forgery detection",
+    "doi": "10.1007/s40747-024-01634-6",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Robust face forgery detection integrating local texture and global texture information",
+    "doi": "10.1186/s13635-025-00189-4",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "The Creation and Detection of Deepfakes - A Survey",
+    "doi": "10.1145/3425780",
+    "year": "2018",
+    "volume": "1",
+    "issue": "1",
+    "pages": "",
+    "journal": "ACM Computing Surveys"
+  },
+  {
+    "file": "Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection (2024)",
+    "doi": "10.1145/3643491.3660292",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "Transparent AI for mathematics -  transformer-based large language models for mathematical entity relationship extraction with XAI",
+    "doi": "10.1038/s41598-026-43507-7",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Unmasking deepfakes - A systematic review of deepfake detection and",
+    "doi": "10.1016/j.eswa.2024.124260",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Expert Systems"
+  },
+  {
+    "file": "A comprehensive survey on machine learning approaches for fake news detection",
+    "doi": "10.1007/s11042-023-17470-8",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Multimedia Tools and Applications"
+  },
+  {
+    "file": "A reasoning based explainable multimodal fake news detection for low resource language using large language models and transformers",
+    "doi": "10.1186/s40537-025-01093-x",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "A Review of Automatic Fake News Detection",
+    "doi": "10.3390/fi17100435",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "A Review of Deep Learning-based Approaches for Deepfake Content Detection",
+    "doi": "10.1111/exsy.13570",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "A simple contrastive embedding framework for low-resource fake news detection",
+    "doi": "10.1007/s00521-025-11467-0",
+    "year": "2024",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "AI Based LSTM-BERT Model for False News Detection",
+    "doi": "10.1007/978-3-032-19318-6_12",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "BiLSTM-LIME integrating NLP and advanced machine learning models for fake news detection",
+    "doi": "10.1007/s44163-026-00852-w",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Dual stream graph augmented transformer model integrating BERT and GNNs for context aware fake news detection",
+    "doi": "10.1038/s41598-025-05586-w",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Ensemble based high performance deep learning models for fake news detection",
+    "doi": "10.1038/s41598-024-76286-0",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Explainable AI for online disinformation detection - Insights from a design science research project",
+    "doi": "10.1007/s12525-025-00799-3",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Exploring Machine Learning for Fake News Detection",
+    "doi": "10.1007/s42452-025-07548-3",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": "Discover Applied Sciences"
+  },
+  {
+    "file": "Fake News Detection Using Machine Learning and Deep Learning Algorithms - A Comprehensive Review",
+    "doi": "10.3390/computers14090394",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "Graph-augmented transformer ensemble framework for robust and scalable fake news detection in social media ecosystems",
+    "doi": "10.1038/s41598-025-31653-3",
+    "year": "",
+    "volume": "",
+    "issue": "11",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Hybrid optimization driven fake news detection using reinforced transformer models",
+    "doi": "10.1038/s41598-025-99936-3",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Multi-modal fake news detection- A comprehensive survey on deep learning technology, advances, and challenges",
+    "doi": "10.1007/s44443-025-00317-7",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Multimodal based Amharic fake news detection using CNN and attention-based BiLSTM",
+    "doi": "10.1038/s41598-025-17579-w",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "Multimodal graph contrastive learning for fake news video detection",
+    "doi": "10.1007/s44443-025-00400-z",
+    "year": "2025",
+    "volume": "",
+    "issue": "467",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Towards Smart Fake News Detection Through Explainable AI",
+    "doi": "10.48550/arXiv.2207.11490",
+    "year": "2022",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "Transfer learning driven fake news detection and classification using large language models",
+    "doi": "10.1038/s41598-025-10670-2",
+    "year": "",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Scientific Reports"
+  },
+  {
+    "file": "A machine learning approach to detecting fraudulent job types",
+    "doi": "10.1007/s00146-022-01469-0",
+    "year": "2023",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "AI & Society"
+  },
+  {
+    "file": "Analysing motivations of Ponzi victims in West Bengal, India",
+    "doi": "10.1057/s41599-025-04737-8",
+    "year": "2000",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": ""
+  },
+  {
+    "file": "Fraud-BERT - transformer based context aware online recruitment fraud detection",
+    "doi": "10.1007/s10791-025-09502-8",
+    "year": "2025",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "journal": "Discover Computing"
+  },
+  {
+    "file": "Imperfect Victims -  Comparing Chinese and Vietnamese Survivors of Forced Criminality in Southeast Asia’s Online Scam Industry",
+    "doi": "10.1007/s11417-026-09495-3",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "Pathways of Intention - Narratives of Future Withdrawal from Cyber Fraud Among Ghanaian Youth",
+    "doi": "10.1007/s40865-026-00306-y",
+    "year": "2026",
+    "volume": "",
+    "issue": "",
+    "pages": "2",
+    "journal": ""
+  },
+  {
+    "file": "DeepFake Detection Using CNN Models with Explainable AI Techniques",
+    "doi": "10.1109/access65134.2025.11135663",
+    "year": "2025",
+    "journal": "IEEE Access",
+    "volume": "",
+    "issue": "",
+    "pages": ""
+  },
+  {
+    "file": "Explainable Fake News Detection Based on BERT and SHAP Applied to COVID-19",
+    "doi": "10.5815/ijmecs.2024.01.02",
+    "year": "2024",
+    "journal": "International Journal of Modern Education and Computer Science",
+    "volume": "16",
+    "issue": "1",
+    "pages": "11-22"
+  }
+]

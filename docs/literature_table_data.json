@@ -1,0 +1,386 @@
+[
+  {
+    "ref": 1,
+    "domain": "Cross-domain",
+    "title": "An AI-driven conceptual framework for detecting fake news and deepfake content - a systematic review",
+    "tech": "EfficientNet, Grad-CAM, BERT, Xception, ResNet, CNN, Transformer, GAN",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "AUC 1"
+  },
+  {
+    "ref": 2,
+    "domain": "Fake News",
+    "title": "A hybrid deep learning framework for fake news detection using LSTM-CGPNN and metaheuristic optimization",
+    "tech": "BERT, Xception, CNN, LSTM, Transformer, SVM, Random Forest, BiLSTM",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 95%; Prec 95.5%"
+  },
+  {
+    "ref": 3,
+    "domain": "DeepFake",
+    "title": "A hybrid spatial–frequency attention-based algorithm using efficientnet for robust and interpretable deepfake detection",
+    "tech": "EfficientNet, Grad-CAM, Xception, ResNet, CNN, Transformer, Vision Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "AUC 0.997"
+  },
+  {
+    "ref": 4,
+    "domain": "Fake News",
+    "title": "Addressing data scarcity in multilingual fake news detection -  an LLM-based dataset augmentation approach",
+    "tech": "BERT, RoBERTa, Xception, Transformer, Vision Transformer",
+    "obj": "The rise in online news consumption, especially during critical events, coupled with rapid advances in generative artificial intelligence (AI), has accelerated the spread of misinf",
+    "out": "F1 7.7"
+  },
+  {
+    "ref": 5,
+    "domain": "DeepFake",
+    "title": "An enhanced deep learning framework for DeepFake detection using EfficientNet-B3 comparative evaluation of deep and machine learning techniques",
+    "tech": "EfficientNet, Xception, CNN, Transformer, Vision Transformer, SVM, Random Forest",
+    "obj": "Over the last few years, spread of DeepFake content has become major issue on digital platforms, calling for strong detection systems. This research investigates and compares the p",
+    "out": "Acc 96.5%; F1 8; AUC 9"
+  },
+  {
+    "ref": 6,
+    "domain": "DeepFake",
+    "title": "An ensemble of CNNs with self-attention mechanism for DeepFake video detection",
+    "tech": "Xception, ResNet, CNN, Transformer, GAN, Vision Transformer, SVM",
+    "obj": "The availability of large-scale facial datasets with the rapid progress of deep learning techniques, such as Generative Adversarial Networks, has enabled anyone to create realistic",
+    "out": "AUC 9"
+  },
+  {
+    "ref": 7,
+    "domain": "DeepFake",
+    "title": "Building an efficient Deep Fake detection system using the recognition capabilities of convolutional neural networks and transformers",
+    "tech": "Xception, CNN, Transformer, Vision Transformer",
+    "obj": "Deepfake technology is growing more and more hazardous because it makes it easier to create incredibly realistic digital content that distorts reality and spreads fabricated data.",
+    "out": "F1 9"
+  },
+  {
+    "ref": 8,
+    "domain": "DeepFake",
+    "title": "DeepDect -  an explainable AI platform for face swapping and face generation DeepFake detection",
+    "tech": "Grad-CAM, Xception, ResNet, CNN, GAN, Vision Transformer, Random Forest",
+    "obj": "The rapid advancement of Deep Learning (DL) techniques has led to the widespread pro­ liferation of DeepFake (DF) images, raising real-world concerns. In this work, DeepDect is pro",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 9,
+    "domain": "DeepFake",
+    "title": "Deepfake detection - critical review of state-of-the-art approaches and future perspectives",
+    "tech": "GAN",
+    "obj": "In recent years, the advancement of technology, particularly in domains such as AI, machine learning, and deep learning, has fostered the development of novel tools for altering vi",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 10,
+    "domain": "DeepFake",
+    "title": "DeepFake Detection in Images and Videos - A Survey on Models, Datasets, and Evaluation Metrics",
+    "tech": "EfficientNetB0, EfficientNet, Xception, ResNet, CNN, LSTM, Transformer, GAN",
+    "obj": "DeepFake technology transforms digital media, blurring the gap between real and manipu­ lation. With an increase in its misuse, the necessity for efficient detection has grown to n",
+    "out": "Acc 97.82%; F1 0.976; AUC 9; Prec 91.03%"
+  },
+  {
+    "ref": 11,
+    "domain": "DeepFake",
+    "title": "Deepfake detection using convolutional vision transformers and convolutional neural networks",
+    "tech": "Xception, ResNet, CNN, LSTM, Transformer, Vision Transformer",
+    "obj": "Deepfake technology has rapidly advanced in recent years, creating highly realistic fake videos that can be difﬁcult to distinguish from real ones. The rise of social media platfor",
+    "out": "Acc 97%"
+  },
+  {
+    "ref": 12,
+    "domain": "DeepFake",
+    "title": "DeepFeatureX-SN Generalization of deepfake detection via contrastive learning",
+    "tech": "ResNet, CNN, GAN",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 97.29%"
+  },
+  {
+    "ref": 13,
+    "domain": "DeepFake",
+    "title": "Enhancing deepfake detection with Adaptive-DCGAN and Lite-CNN  a novel approach to image classification",
+    "tech": "ResNet, CNN, GAN",
+    "obj": "The rapid advancement of digital content generation technologies has led to the proliferation of deepfake media, posing significant security and privacy risks on social networks. C",
+    "out": "Acc 95%"
+  },
+  {
+    "ref": 14,
+    "domain": "DeepFake",
+    "title": "Explainable AI for DeepFake Detection",
+    "tech": "EfficientNet, Grad-CAM, LIME, SHAP, ResNet, CNN, GAN, Vision Transformer",
+    "obj": ": The surge in technological advancements has resulted in concerns over its misuse in politics and entertainment, making reliable detection methods essential. This study introduces",
+    "out": "F1 0.8"
+  },
+  {
+    "ref": 15,
+    "domain": "DeepFake",
+    "title": "Explainable deepfake detection across different modalities  An overview of methods and challenges",
+    "tech": "EfficientNet, Grad-CAM, LIME, SHAP, Xception, ResNet, CNN, LSTM",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 98.7%; F1 0.9986; AUC 0.99973; Prec 90%; Rec 93%"
+  },
+  {
+    "ref": 16,
+    "domain": "DeepFake",
+    "title": "Generative AI for multimodal content - a survey with empirical and experimental evaluations",
+    "tech": "Transformer, Vision Transformer",
+    "obj": "Generative Artificial Intelligence (AI) has emerged as a transformative force, capable of synthesizing high-quality, coherent, and semantically rich multimodal content across text,",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 17,
+    "domain": "DeepFake",
+    "title": "Hybrid CNN-based detection of forged facial",
+    "tech": "ResNet, CNN, GAN",
+    "obj": "This study proposes a hybrid deep learning framework for detecting face morphing and swapping attacks using texture descriptors and advanced CNN classifiers. The process begins wit",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 18,
+    "domain": "DeepFake",
+    "title": "ID-insensitive deepfake detection model based on multi-attention mechanism",
+    "tech": "EfficientNet, Xception, GAN, Vision Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 19,
+    "domain": "DeepFake",
+    "title": "Mf-net - multi-feature fusion network based on two-stream extraction and multi-scale enhancement for face forgery detection",
+    "tech": "CNN, GAN",
+    "obj": "Due to the increasing sophistication of face forgery techniques, the images generated are becoming more and more realistic and difﬁcult for human eyes to distinguish. These face fo",
+    "out": "AUC 9"
+  },
+  {
+    "ref": 20,
+    "domain": "DeepFake",
+    "title": "Robust face forgery detection integrating local texture and global texture information",
+    "tech": "CNN, Transformer, GAN, Vision Transformer",
+    "obj": "Facial forgery technology is advancing rapidly, leading to significant social security concerns. In recent years, as for- gery technologies and types continue to emerge, many metho",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 21,
+    "domain": "DeepFake",
+    "title": "The Creation and Detection of Deepfakes - A Survey",
+    "tech": "CNN, LSTM, GAN",
+    "obj": "ing with credit is permited. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior speciﬁc permission and/or a fee. Request permissions fr",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 22,
+    "domain": "DeepFake",
+    "title": "Towards Quantitative Evaluation of Explainable AI Methods for Deepfake Detection (2024)",
+    "tech": "N/A",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 23,
+    "domain": "DeepFake",
+    "title": "Transparent AI for mathematics -  transformer-based large language models for mathematical entity relationship extraction with XAI",
+    "tech": "BERT, RoBERTa, LIME, SHAP, Xception, CNN, LSTM, Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 99.39%; F1 1; Prec 100%; Rec 100%"
+  },
+  {
+    "ref": 24,
+    "domain": "DeepFake",
+    "title": "Unmasking deepfakes - A systematic review of deepfake detection and",
+    "tech": "GAN, Vision Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 25,
+    "domain": "Fake News",
+    "title": "A comprehensive survey on machine learning approaches for fake news detection",
+    "tech": "Transformer, Vision Transformer",
+    "obj": "The proliferation of fake news on social media platforms poses signiﬁcant challenges to society and individuals, leading to negative impacts. As the tactics employed by purveyors o",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 26,
+    "domain": "Fake News",
+    "title": "A reasoning based explainable multimodal fake news detection for low resource language using large language models and transformers",
+    "tech": "BERT, RoBERTa, Xception, ResNet, CNN, LSTM, Transformer, Vision Transformer",
+    "obj": "Nowadays, individuals rely predominantly on online social media platforms, news feeds, websites, and news aggregator applications to acquire recent news stories. This trend has res",
+    "out": "F1 0.8736"
+  },
+  {
+    "ref": 27,
+    "domain": "Fake News",
+    "title": "A Review of Automatic Fake News Detection",
+    "tech": "BERT, CNN, LSTM, Transformer, SVM, Random Forest, TF-IDF",
+    "obj": "In the current digital era, the spread of fake news presents serious difficulties. This study offers a thorough analysis of recent developments in false news automatic detection te",
+    "out": "Acc 65%; AUC 0.9394; Prec 90%"
+  },
+  {
+    "ref": 28,
+    "domain": "Fake News",
+    "title": "A Review of Deep Learning-based Approaches for Deepfake Content Detection",
+    "tech": "LSTM, Transformer, GAN, Vision Transformer, SVM",
+    "obj": "Recent advancements in deep learning generative models have raised con- cerns as they can create highly convincing counterfeit images and videos. This poses a threat to people’s in",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 29,
+    "domain": "Fake News",
+    "title": "A simple contrastive embedding framework for low-resource fake news detection",
+    "tech": "BERT, LSTM, Transformer",
+    "obj": "Low-resource fake news detection aims at discerning between true and false claims from low-resource languages with scarce benchmark datasets. In this resource-constrained scenario,",
+    "out": "Acc 75%; Rec 75%"
+  },
+  {
+    "ref": 30,
+    "domain": "Fake News",
+    "title": "AI Based LSTM-BERT Model for False News Detection",
+    "tech": "N/A",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 31,
+    "domain": "Fake News",
+    "title": "BiLSTM-LIME integrating NLP and advanced machine learning models for fake news detection",
+    "tech": "BERT, RoBERTa, LIME, CNN, LSTM, Transformer, Vision Transformer, SVM",
+    "obj": "The proliferation of fake news on digital platforms poses a growing threat to democratic integrity, public trust, and social stability. Addressing the limitations of existing detec",
+    "out": "F1 0.97"
+  },
+  {
+    "ref": 32,
+    "domain": "Fake News",
+    "title": "Dual stream graph augmented transformer model integrating BERT and GNNs for context aware fake news detection",
+    "tech": "BERT, RoBERTa, LIME, CNN, LSTM, Transformer, Vision Transformer, BiLSTM",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 99%; F1 9; AUC 0.985"
+  },
+  {
+    "ref": 33,
+    "domain": "Fake News",
+    "title": "Ensemble based high performance deep learning models for fake news detection",
+    "tech": "BERT, RoBERTa, CNN, LSTM, Transformer, Vision Transformer, SVM, Random Forest",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 96.73%"
+  },
+  {
+    "ref": 34,
+    "domain": "Fake News",
+    "title": "Explainable AI for online disinformation detection - Insights from a design science research project",
+    "tech": "Grad-CAM, LIME, SHAP, Vision Transformer",
+    "obj": "The pervasive threat of online disinformation challenges the integrity of the digital public sphere and the resilience of liberal democracies. This study conceptualizes and evaluat",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 35,
+    "domain": "Fake News",
+    "title": "Exploring Machine Learning for Fake News Detection",
+    "tech": "BERT, RoBERTa, Xception, ResNet, CNN, LSTM, Transformer, Vision Transformer",
+    "obj": "Social media usage has reached its peak across all age groups, resulting in vast quantities of data being generated daily, some internet users disseminate fake information for thei",
+    "out": "Acc 82.3%; AUC 0.86"
+  },
+  {
+    "ref": 36,
+    "domain": "Fake News",
+    "title": "Fake News Detection Using Machine Learning and Deep Learning Algorithms - A Comprehensive Review",
+    "tech": "BERT, RoBERTa, CNN, LSTM, Transformer, SVM, Random Forest, BiLSTM",
+    "obj": "Currently, with significant developments in technology and social networks, people gain rapid access to news without focusing on its reliability. Consequently, the proportion of fa",
+    "out": "Acc 96%; F1 6"
+  },
+  {
+    "ref": 37,
+    "domain": "Fake News",
+    "title": "Graph-augmented transformer ensemble framework for robust and scalable fake news detection in social media ecosystems",
+    "tech": "BERT, RoBERTa, CNN, LSTM, Transformer, Vision Transformer, SVM, TF-IDF",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 96.5%; F1 9; AUC 9"
+  },
+  {
+    "ref": 38,
+    "domain": "Fake News",
+    "title": "Hybrid optimization driven fake news detection using reinforced transformer models",
+    "tech": "EfficientNet, BERT, RoBERTa, ResNet, CNN, LSTM, Transformer, Vision Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 10.15%; F1 0.99"
+  },
+  {
+    "ref": 39,
+    "domain": "Fake News",
+    "title": "Multi-modal fake news detection- A comprehensive survey on deep learning technology, advances, and challenges",
+    "tech": "BERT, RoBERTa, ResNet, LSTM, Transformer, Vision Transformer",
+    "obj": "The rapid development of social media and networks has dramatically accelerated the spread of multimodal fake news, posing significant threats to social stability, the public's rig",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 40,
+    "domain": "Fake News",
+    "title": "Multimodal based Amharic fake news detection using CNN and attention-based BiLSTM",
+    "tech": "BERT, CNN, LSTM, GAN, Vision Transformer, SVM, Random Forest, BiLSTM",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Acc 98%; F1 9; Prec 99.67%"
+  },
+  {
+    "ref": 41,
+    "domain": "Fake News",
+    "title": "Multimodal graph contrastive learning for fake news video detection",
+    "tech": "RoBERTa, CNN, Transformer, Vision Transformer, TF-IDF",
+    "obj": "As online video news gains more popularity for information acquisition, the presence of fake news video poses a new threat to users seeking the real news. Though previous studies h",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 42,
+    "domain": "Fake News",
+    "title": "Towards Smart Fake News Detection Through Explainable AI",
+    "tech": "BERT, CNN, LSTM",
+    "obj": ". People now see social media sites as their sole source of information due to their popularity. The Majority of people get their news through social media. At the same time, fake",
+    "out": "Acc 90%"
+  },
+  {
+    "ref": 43,
+    "domain": "Fake News",
+    "title": "Transfer learning driven fake news detection and classification using large language models",
+    "tech": "BERT, RoBERTa, ResNet, CNN, LSTM, Transformer, Vision Transformer, BiLSTM",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 44,
+    "domain": "Recruitment Scam",
+    "title": "A machine learning approach to detecting fraudulent job types",
+    "tech": "LIME, Xception, Transformer, Vision Transformer, SVM, Random Forest, TF-IDF",
+    "obj": "Job seekers find themselves increasingly duped and misled by fraudulent job advertisements, posing a threat to their privacy, security and well-being. There is a clear need for sol",
+    "out": "F1 0.88"
+  },
+  {
+    "ref": 45,
+    "domain": "Recruitment Scam",
+    "title": "Analysing motivations of Ponzi victims in West Bengal, India",
+    "tech": "Xception, Vision Transformer",
+    "obj": "Detect/classify deceptive digital content",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 46,
+    "domain": "Recruitment Scam",
+    "title": "Fraud-BERT - transformer based context aware online recruitment fraud detection",
+    "tech": "BERT, RoBERTa, CNN, LSTM, Transformer, SVM, Random Forest, BiLSTM",
+    "obj": "Online recruitment facilitates the automatic hiring process for recruiters and provides convenience to job seekers via online job platforms. Parallelly, it has given rise to malici",
+    "out": "Acc 96.19%; F1 0.93; AUC 0.97"
+  },
+  {
+    "ref": 47,
+    "domain": "Recruitment Scam",
+    "title": "Imperfect Victims -  Comparing Chinese and Vietnamese Survivors of Forced Criminality in Southeast Asia’s Online Scam Industry",
+    "tech": "Xception, Vision Transformer",
+    "obj": "In recent years, the online scam industry has expanded rapidly across Southeast Asia, with operations shifting from dispersed setups in apartments, villas, and hotel rooms to large",
+    "out": "Reported in paper (see full text)"
+  },
+  {
+    "ref": 48,
+    "domain": "Recruitment Scam",
+    "title": "Pathways of Intention - Narratives of Future Withdrawal from Cyber Fraud Among Ghanaian Youth",
+    "tech": "Vision Transformer",
+    "obj": "As cyber fraud becomes an increasingly visible feature of informal youth econo­ mies in parts of West Africa, much remains unknown about how young offend­ ers articulate aspiration",
+    "out": "Reported in paper (see full text)"
+  }
+]

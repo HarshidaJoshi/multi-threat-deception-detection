@@ -1,0 +1,40 @@
+SICACS / ICACS 2026 — Survey Paper
+Author / affiliation block (also already added in paper.tex)
+
+--------------------------------------------------------------------------------
+TITLE
+A Survey on Multi-Threat Explainable AI for Digital Deception Detection:
+DeepFakes, Fake News, and Recruitment Fraud
+--------------------------------------------------------------------------------
+
+AUTHORS
+
+1) Harshida Joshi
+   Role   : Student, Artificial Intelligence & Data Science
+   ORCID  : 0009-0008-7301-4733
+   Email  : harshida.joshi@paruluniversity.ac.in   (REPLACE with your real email)
+
+2) Swati Sharma
+   Role   : Assistant Professor (Guide)
+   Email  : swati.sharma@paruluniversity.ac.in     (REPLACE with Swati mam real email)
+
+3) Ashwini Kumar Jha
+   Role   : Co-Guide
+   ORCID  : 0000-0002-6607-2168
+   Email  : ashwinibjha@gmail.com
+
+--------------------------------------------------------------------------------
+AFFILIATION (required — keep this)
+
+Department of Artificial Intelligence & Data Science,
+Parul Institute of Engineering & Technology,
+Faculty of Engineering & Technology,
+Parul University,
+Waghodia, Vadodara, Gujarat, 391760, India.
+
+--------------------------------------------------------------------------------
+NOTE
+- Full LaTeX paper file : paper.tex  (same folder)
+- Your + Swati mam emails above are DEMO placeholders until you send real IDs
+- Then update both paper.tex and this paper.txt
+--------------------------------------------------------------------------------

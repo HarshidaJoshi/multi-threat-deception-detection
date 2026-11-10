@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Misinformation Detection{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Misinformation Detection</h1>
+  <p class="page-sub">Text-based analysis of misleading content with word-level explanations</p>
+</div>
+<div class="module-grid">
+  <a href="{% url 'misinformation_fake_news' %}" class="glass module-card">
+    <h3>Fake News</h3>
+    <p class="text-sm muted mt-2">Trained TF-IDF classifier for news articles</p>
+  </a>
+  <a href="{% url 'misinformation_recruitment_scam' %}" class="glass module-card">
+    <h3>Recruitment Scam</h3>
+    <p class="text-sm muted mt-2">Fraudulent job post verification under misinformation detection</p>
+  </a>
+</div>
+{% endblock %}

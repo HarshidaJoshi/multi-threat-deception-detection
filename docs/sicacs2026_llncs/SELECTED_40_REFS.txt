@@ -1,0 +1,49 @@
+SELECTED 40 references for paper.tex
+Source: docs/literature_refs_formatted.txt
+
+Paper# | LR# | Citation start
+--------------------------------------------------------------------------------
+01 | [01] | B. V. Moyo, T. Tuyikeze, F. Matsebula, et al. (2026) An AI-driven conceptual framework for detecting
+02 | [03] | M. Kumar, A. Kumar, V. Yadav, et al. (2026) A hybrid spatial–frequency attention-based algorithm usi
+03 | [04] | R. Chalehchaleh, R. Farahbakhsh, and N. Crespi (2025) Addressing data scarcity in multilingual fake 
+04 | [05] | B. G. Deepa, C. K. Lokesh, D. Umamaheswari, et al. (2026) An enhanced deep learning framework for De
+05 | [06] | K. Omar, R. H. Sakr, and M. F. Alrahmawy (2024) An ensemble of CNNs with self-attention mechanism fo
+06 | [07] | A. P. Magesh, S. S. M. Ramakrishnan, R. Arumuga Arun, et al. (2025) Building an efficient Deep Fake 
+07 | [08] | F. Castro, V. Gattulli, D. Impedovo, et al. (2026) DeepDect: an explainable AI platform for face swa
+08 | [09] | B. C. Soundarya and H. L. Gururaj (2026) Deepfake detection: critical review of state-of-the-art app
+09 | [10] | N. A. Bhat and K. J. Giri (2026) DeepFake detection in images and videos: a survey on models, datase
+10 | [11] | A. H. Soudy, O. Sayed, H. Tag-Elser, et al. (2024) Deepfake detection using convolutional vision tra
+11 | [12] | O. Pontorno, L. Guarnera, and S. Battiato (2025) DeepFeatureX-SN: Generalization of deepfake detecti
+12 | [13] | D. Javiya, G. Jethava, H. Parmar, et al. (2025) Enhancing deepfake detection with Adaptive-DCGAN and
+13 | [14] | N. Mansoor and A. I. Iliev (2025) Explainable AI for DeepFake Detection. *Applied Sciences*, 15(2), 
+14 | [15] | M. S. Momin, A. Sufian, D. Barman, et al. (2025) Explainable deepfake detection across different mod
+15 | [17] | S. Kaman, S. B. Javeriya, and A. Makandar (2025) Hybrid CNN-based detection of forged facial images 
+16 | [18] | Y. Sheng, Z. Zou, Z. Yu, et al. (2025) ID-insensitive deepfake detection model based on multi-attent
+17 | [19] | H. Duan, Q. Jiang, X. Jin, et al. (2025) Mf-net: multi-feature fusion network based on two-stream ex
+18 | [21] | Y. Mirsky and W. Lee (2022) The Creation and Detection of Deepfakes. *ACM Computing Surveys*, 54(1),
+19 | [22] | K. Tsigos, E. Apostolidis, S. Baxevanakis, et al. (2024) Towards Quantitative Evaluation of Explaina
+20 | [24] | F. Abbas and A. Taeihagh (2024) Unmasking deepfakes: A systematic review of deepfake detection and g
+21 | [25] | J. Alghamdi, S. Luo, and Y. Lin (2023) A comprehensive survey on machine learning approaches for fak
+22 | [26] | H. R. LekshmiAmmal and A. K. Madasamy (2025) A reasoning based explainable multimodal fake news dete
+23 | [28] | L. A. Passos, D. Jodas, K. A. P. Costa, et al. (2024) A review of deep learning‐based approaches for
+24 | [29] | I. Ni’mah, R. Wijayanti, A. Santosa, et al. (2025) A simple contrastive embedding framework for low-
+25 | [30] | S. Muthukumar, J. G. Fernandez, B. J. Ambika, et al. (2026) AI Based LSTM-BERT Model for False News 
+26 | [31] | S. G. Sneha, A. Sen, S. Malik, et al. (2026) BiLSTM-LIME: integrating NLP and advanced machine learn
+27 | [32] | H. Rama Moorthy, N. J. Avinash, N. S. Krishnaraj Rao, et al. (2025) Dual stream graph augmented tran
+28 | [33] | M. E.Almandouh, M. F. Alrahmawy, M. Eisa, et al. (2024) Ensemble based high performance deep learnin
+29 | [34] | I. Bezzaoui, C. Stein, C. Weinhardt, et al. (2025) Explainable AI for online disinformation detectio
+30 | [35] | S. Yakkundi, R. Patil, S. Sangani, et al. (2025) Exploring machine learning for fake news detection:
+31 | [36] | F. A. Alshuwaier and F. A. Alsulaiman (2025) Fake News Detection Using Machine Learning and Deep Lea
+32 | [37] | C. Kumar, M. Bansal, M. A. Khan, et al. (2025) Graph-augmented transformer ensemble framework for ro
+33 | [38] | G. K. M, K. S. Faizz Ahmad, S. G. Pamidimukkala, et al. (2025) Hybrid optimization driven fake news 
+34 | [39] | J. Lv, Y. Gao, L. Li, et al. (2025) Multi-modal fake news detection: A comprehensive survey on deep 
+35 | [42] | A. B. Athira, S. D. Madhu Kumar, and A. M. Chacko (2022) Towards Smart Fake News Detection Through E
+36 | [43] | B. S. Alqadi, S. A. Alsuhibany, S. N. Yousafzai, et al. (2025) Transfer learning driven fake news de
+37 | [44] | M. Naudé, K. J. Adebayo, and R. Nanda (2023) A machine learning approach to detecting fraudulent job
+38 | [46] | K. Taneja, J. Vashishtha, and S. Ratnoo (2025) Fraud-BERT: transformer based context aware online re
+39 | [49] | DeepFake Detection Using CNN Models with Explainable AI Techniques (2025) *IEEE Access*. doi: https:
+40 | [50] | X. Men and V. Y. Mariano (2024) Explainable Fake News Detection Based on BERT and SHAP Applied to CO
+
+SKIPPED (10): [2], [16], [20], [23], [27], [40], [41], [45], [47], [48]
+Skipped titles: Ayyasamy LSTM-CGPNN; Taha generative multimodal; Gong texture; Aurpa math XAI;
+Emil fake-news review; Geto Amharic; Zhang video GCL; Samanta Ponzi; Franceschini; Asiama.
